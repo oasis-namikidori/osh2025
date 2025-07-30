@@ -24,7 +24,7 @@
     <div id="menu-toggle" class="block md:hidden text-3xl cursor-pointer">≡</div>
   </header>
 
-  <nav id="mobile-menu" class="md:hidden hidden flex-col bg-gray-100 px-6 py-4 space-y-2 mt-20">
+  <nav id="mobile-menu" class="md:hidden hidden flex-col bg-gray-100 px-6 py-4 space-y-2 absolute top-20 w-full z-40">
     <a href="#about" class="text-sky-500 block">開催概要</a>
     <a href="#shops" class="text-sky-500 block">出店者</a>
     <a href="#access" class="text-sky-500 block">アクセス</a>
@@ -89,23 +89,22 @@
     const menuLinks = mobileMenu.querySelectorAll('a');
     const backToTop = document.getElementById('backToTop');
 
-    // ハンバーガー開閉
     if (menuToggle && mobileMenu) {
-      menuToggle.addEventListener('click', () => {
+      menuToggle.addEventListener('click', (e) => {
+        e.preventDefault(); // ← 追加
         mobileMenu.classList.toggle('hidden');
       });
     }
 
-    // ページ内リンク押したらメニューを閉じる
-    if (menuLinks.length) {
-      menuLinks.forEach(link => {
-        link.addEventListener('click', () => {
+    // ページ内リンククリックでメニュー閉じる（タイマー付き）
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        setTimeout(() => {
           mobileMenu.classList.add('hidden');
-        });
+        }, 200); // ← 遷移してからメニューを閉じる
       });
-    }
+    });
 
-    // スクロールでトップボタン表示
     if (backToTop) {
       window.addEventListener('scroll', () => {
         if (window.scrollY > 300) {
