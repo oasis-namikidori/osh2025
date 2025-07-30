@@ -35,7 +35,7 @@
   <h1 class="flex flex-col items-center gap-8">
   <img src="img/logo1.svg" alt="OASIS STREET HARVEST 2025" class="h-64" />
   <img src="img/logo2.svg" alt="音と米" class="h-20" />
-</div>
+  </h1>
 
     <p class="text-lg md:text-xl mb-6">2025年11月24日（祝）</p>
   </section>
@@ -70,7 +70,7 @@
   <!-- アクセス -->
   <section id="access" class="py-20 px-6 bg-white text-center">
     <h2 class="text-3xl font-bold mb-4">アクセス</h2>
-    <p class="text-lg mb-6">会場：〇〇商店街本通り（JR〇〇駅から徒歩5分）</p>
+    <p class="text-lg mb-6">会場：オアシス並木通り商店街</p>
     <!-- 仮地図 -->
     <div class="w-full max-w-2xl mx-auto h-64 bg-gray-200 flex items-center justify-center rounded">
       <span class="text-gray-600">ここに地図（Google Mapsなど）を埋め込む</span>
@@ -79,32 +79,39 @@
 
   <!-- フッター -->
   <footer class="py-8 bg-gray-100 text-center text-sm text-gray-500">
-    &copy; 2025 〇〇商店街まつり 実行委員会 ｜ Instagram / X（旧Twitter）リンクなど設置予定
+    &copy; OASIS STREET HARVEST 2025 ｜ Instagram / X（旧Twitter）リンクなど設置予定
   </footer>
 
-
 <script>
-  const btn = document.getElementById('backToTop');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-      btn.style.display = 'block';
-    } else {
-      btn.style.display = 'none';
-    }
-  });
-</script>
-<script>
-  const toggle = document.getElementById('menu-toggle');
-  const menu = document.getElementById('mobile-menu');
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuLinks = mobileMenu.querySelectorAll('a');
+  const backToTop = document.getElementById('backToTop');
 
-  toggle.addEventListener('click', () => {
-    menu.classList.toggle('hidden');
+  menuToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
   });
+
+  menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+    });
+  });
+
+  if (backToTop) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTop.style.display = 'block';
+      } else {
+        backToTop.style.display = 'none';
+      }
+    });
+  }
 </script>
 
 <a href="#" id="backToTop"
    class="fixed bottom-4 right-4 w-12 h-12 bg-blue-500 text-white text-xl
-          flex items-center justify-center rounded-full shadow hover:bg-blue-600">
+          flex items-center justify-center rounded-full shadow hover:bg-blue-600 z-50 hidden">
   ↑
 </a>
 
