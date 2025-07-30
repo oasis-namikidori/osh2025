@@ -34,7 +34,7 @@
   <section class="w-full h-[600px] bg-white flex flex-col items-center justify-center text-center px-8 pt-20">
   <h1 class="flex flex-col items-center gap-8">
   <img src="img/logo1.svg" alt="OASIS STREET HARVEST 2025" class="h-64" />
-  <img src="img/logo2.svg" alt="音と米" class="h-20" />
+  <img src="img/logo2.svg" alt="音と米" class="h-20 mb-6" />
   </h1>
 
     <p class="text-lg md:text-xl mb-6">2025年11月24日（祝）</p>
@@ -42,7 +42,7 @@
 
   <!-- 開催概要 -->
   <section id="about" class="py-20 px-6 bg-white text-center">
-    <h2 class="text-3xl font-bold mb-4">開催概要</h2>
+    <h2 class="text-3xl font-normal mb-4 text-sky-500">開催概要</h2>
     <p class="text-lg max-w-2xl mx-auto">
       〇〇商店街まつりは、地元の人々が一体となって楽しむ年に一度のイベントです。音楽、食、パフォーマンスなど、地域の魅力を再発見できるお祭りです！
     </p>
@@ -50,7 +50,7 @@
 
   <!-- 出店者紹介 -->
   <section id="shops" class="py-20 px-6 bg-gray-100 text-center">
-    <h2 class="text-3xl font-bold mb-8">出店者紹介</h2>
+    <h2 class="text-3xl font-normal mb-8 text-sky-500">出店者紹介</h2>
     <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
       <div class="bg-white shadow p-6 rounded">
         <h3 class="text-xl font-semibold mb-2">〇〇焼き屋さん</h3>
@@ -69,8 +69,8 @@
 
   <!-- アクセス -->
   <section id="access" class="py-20 px-6 bg-white text-center">
-    <h2 class="text-3xl font-bold mb-4">アクセス</h2>
-    <p class="text-lg mb-6">会場：オアシス並木通り商店街</p>
+    <h2 class="text-3xl font-normal mb-4 text-sky-500">アクセス</h2>
+    <p class="text-lg mb-6">会場：オアシス並木通り商店街<br>大分市中央町4丁目</p>
     <!-- 仮地図 -->
     <div class="w-full max-w-2xl mx-auto h-64 bg-gray-200 flex items-center justify-center rounded">
       <span class="text-gray-600">ここに地図（Google Mapsなど）を埋め込む</span>
@@ -83,35 +83,45 @@
   </footer>
 
 <script>
-  const menuToggle = document.getElementById('menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const menuLinks = mobileMenu.querySelectorAll('a');
-  const backToTop = document.getElementById('backToTop');
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuLinks = mobileMenu.querySelectorAll('a');
+    const backToTop = document.getElementById('backToTop');
 
-  menuToggle.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
+    // ハンバーガー開閉
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+
+    // ページ内リンク押したらメニューを閉じる
+    if (menuLinks.length) {
+      menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+    }
+
+    // スクロールでトップボタン表示
+    if (backToTop) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          backToTop.classList.remove('hidden');
+        } else {
+          backToTop.classList.add('hidden');
+        }
+      });
+    }
   });
-
-  menuLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.classList.add('hidden');
-    });
-  });
-
-  if (backToTop) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
-        backToTop.style.display = 'block';
-      } else {
-        backToTop.style.display = 'none';
-      }
-    });
-  }
 </script>
 
 <a href="#" id="backToTop"
    class="fixed bottom-4 right-4 w-12 h-12 bg-blue-500 text-white text-xl
-          flex items-center justify-center rounded-full shadow hover:bg-blue-600 z-50 hidden">
+          flex items-center justify-center text-center leading-none
+          rounded-full shadow hover:bg-blue-600 z-50 hidden">
   ↑
 </a>
 
