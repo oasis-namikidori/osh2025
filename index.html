@@ -25,11 +25,13 @@
     <div id="menu-toggle" class="block md:hidden text-3xl cursor-pointer">≡</div>
   </header>
 
-  <nav id="mobile-menu" class="md:hidden hidden flex-col bg-gray-100 px-6 py-4 space-y-2 fixed top-20 w-full z-40">
-    <a href="#about" class="text-sky-500 block">ABOUT</a>
-    <a href="#shops" class="text-sky-500 block">LINEUP</a>
-    <a href="#access" class="text-sky-500 block">ACCESS</a>
-  </nav>
+<nav id="mobile-menu"
+  class="md:hidden fixed top-20 w-full bg-gray-100 px-6 py-4 space-y-2
+         transition-all duration-300 ease-out transform scale-95 opacity-0 pointer-events-none z-40">
+  <a href="#about" class="block text-sky-500">ABOUT</a>
+  <a href="#shops" class="block text-sky-500">LINEUP</a>
+  <a href="#access" class="block text-sky-500">ACCESS</a>
+</nav>
 
   <!-- メインビジュアル -->
 <section class="w-full min-h-[600px] bg-white flex flex-col items-center justify-center text-center px-8 pt-24">
@@ -80,7 +82,7 @@
   <h2 class="text-2xl font-light mb-4 text-sky-500">OASIS: STREET HARVEST<br><span class="text-sm">オアシス ストリートハーベスト</span>
 </h2>
   <h3 class="text-sm md:text-base leading-loose max-w-2xl mx-auto">
-    商店街のレベルを超えた音楽・アート・食のフリーイベント。<br>大分県の食文化と県内外のアーティストによる文化交流の場。
+    音楽・アート・食のフリーイベント。<br>大分県の食文化と県内外のアーティストによる文化交流の場に。
   </h3>
 </section>
 
@@ -143,9 +145,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuLinks = mobileMenu.querySelectorAll('a');
   const backToTop = document.getElementById('backToTop');
 
-  // ハンバーガーメニューの開閉
+  // スマホメニューのフェードアニメーション表示切り替え
   menuToggle.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
+    const isVisible = mobileMenu.classList.contains('opacity-100');
+
+    if (isVisible) {
+      mobileMenu.classList.remove('opacity-100', 'scale-100');
+      mobileMenu.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+    } else {
+      mobileMenu.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
+      mobileMenu.classList.add('opacity-100', 'scale-100');
+    }
   });
 
   // ページ内リンクでスクロール＋メニューを閉じる
@@ -166,7 +176,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }
 
-      mobileMenu.classList.add('hidden');
+      // メニューをフェードアウト
+      mobileMenu.classList.remove('opacity-100', 'scale-100');
+      mobileMenu.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
     });
   });
 
