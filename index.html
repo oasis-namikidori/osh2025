@@ -41,18 +41,18 @@
   <a href="#access" class="text-[#1195c8] hover:underline">ACCESS</a>
 </nav>
 
-  <!-- 右：Instagramアイコン + ハンバーガー -->
-  <div class="flex items-center gap-4">
-    <!-- Instagramアイコン（全サイズで表示） -->
-    <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"
-   class="inline-block mt-[2px] md:mt-0">
-  <img src="img/ig_c.png" alt="Instagram"
-       class="h-6 w-6 md:h-8 md:w-8 hover:opacity-80 transition-opacity duration-200">
-</a>
+<!-- 右：ハンバーガー + Instagramアイコン -->
+<div class="flex items-center gap-4">
+  <!-- ハンバーガーアイコン（スマホ表示のみ） -->
+  <button id="menu-toggle" class="xl:hidden text-3xl cursor-pointer" aria-label="Open menu">≡</button>
 
-    <!-- ハンバーガーアイコン（スマホ表示のみ） -->
-<button id="menu-toggle" class="xl:hidden text-3xl cursor-pointer" aria-label="Open menu">≡</button>
-  </div>
+  <!-- Instagramアイコン（全サイズで表示） -->
+  <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"
+     class="inline-block mt-[2px] md:mt-0">
+    <img src="img/ig_c.png" alt="Instagram"
+         class="h-6 w-6 md:h-8 md:w-8 hover:opacity-80 transition-opacity duration-200">
+  </a>
+</div>
 
   <!-- 中央：line.svg（上下左右ど真ん中 / クリック邪魔しない） -->
   <div class="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
