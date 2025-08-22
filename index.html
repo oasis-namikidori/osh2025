@@ -243,14 +243,8 @@
 
 
 <!-- モーダル -->
-<div id="modal-tomo" class="fixed inset-0 z-50 bg-black/50 flex items-start justify-center pt-6 hidden">
-  <div class="bg-white rounded-lg p-6 max-w-md w-[90%] relative text-center animate-fade-in">
-
-    <!-- 閉じるボタン -->
-    <button onclick="closeModal('modal-tomo')"
-            class="absolute top-2 right-2 text-2xl text-gray-500 hover:text-black z-10">
-      &times;
-    </button>
+<div id="modal-tomo" class="fixed inset-0 z-50 bg-black/50 flex items-center justify-center px-4 py-8 overflow-auto">
+  <div class="bg-white rounded-lg p-6 max-w-md w-full text-center animate-fade-in">
 
     <!-- 写真とテキスト -->
     <img src="img/sample.jpg"
@@ -258,29 +252,33 @@
          class="mx-auto my-4 w-[240px] aspect-square object-cover rounded-lg" />
     <h3 class="text-lg font-semibold mt-6">TOMO TAKAGI</h3>
     <p class="text-sm mb-6 text-gray-700">Sound Drawing Artist</p>
-<p class="text-xs text-left leading-snug px-1 mb-6">
-  “呼吸のできる音” をコンセプトに東京をベースに活動。ギタードローン、フィールドレコーディング、ラップトップ、音具を扱い音の軌跡を描く。
-</p>
+    <p class="text-xs text-left leading-snug px-2 mb-6">
+      “呼吸のできる音” をコンセプトに東京をベースに活動。ギタードローン、フィールドレコーディング、ラップトップ、音具を扱い音の軌跡を描く。
+    </p>
 
-<!-- 年表 -->
-<div class="px-1">
-  <table class="text-xs text-left leading-relaxed w-full">
-    <tbody>
-      <tr><td class="pr-4 align-top whitespace-nowrap">2014</td><td>1st Album “Memorization”</td></tr>
-      <tr><td class="pr-4 align-top whitespace-nowrap">2017</td><td>ウェストフィヨルド グループレジデンス [ICELAND]</td></tr>
-      <tr><td class="pr-4 align-top whitespace-nowrap">2017―20</td><td>六本木ヒルズ スカイデッキ サウンドデザイン</td></tr>
-      <tr><td class="pr-4 align-top whitespace-nowrap">2018</td><td>Japanese Weekend “選択の恩恵” サウンドインスタレーション シンゲイリ [ICELAND]</td></tr>
-      <tr><td class="pr-4 align-top whitespace-nowrap">2019</td><td>渋谷イノベーションウィーク “Interactive public bench” </td></tr>
-      <tr><td class="pr-4 align-top whitespace-nowrap">2022</td><td>エルメス銀座 “beautiful noise”サウンドデザイン</td></tr>
-      <tr><td class="pr-4 align-top whitespace-nowrap">2023</td><td>オーディオブック（フィールドレコーディング+アンビエント+朗読）“Dark Time Job”</td></tr>
-      <tr><td class="pr-4 align-top whitespace-nowrap">2024</td><td>SIAF（札幌国際芸術祭）”未来のマチのサイン”アートインスタレーションサウンドデザイン</td></tr>
-      <tr><td class="pr-4 align-top whitespace-nowrap">2024</td><td>サウンドパフォーマンス Moon Yurim 個展 “Upward The Farther, The Closer SOUL</td></tr>
-      <tr><td class="pr-4 align-top whitespace-nowrap">2025</td><td>高輪ゲートウェイシティ “Tidal Sound Scape”、生成アンビエントサウンドデザイン</td></tr>
-    </tbody>
-  </table>
-</div>
-  </div>
-</div>
+    <!-- 年表 -->
+    <div class="px-2">
+      <table class="text-xs text-left leading-relaxed w-full mb-6">
+        <tbody>
+          <tr><td class="pr-4 align-top whitespace-nowrap">2014</td><td>1st Album “Memorization”</td></tr>
+          <tr><td class="pr-4 align-top whitespace-nowrap">2017</td><td>ウェストフィヨルド グループレジデンス [ICELAND]</td></tr>
+          <tr><td class="pr-4 align-top whitespace-nowrap">2017―20</td><td>六本木ヒルズ スカイデッキ サウンドデザイン</td></tr>
+          <tr><td class="pr-4 align-top whitespace-nowrap">2018</td><td>Japanese Weekend “選択の恩恵” サウンドインスタレーション シンゲイリ [ICELAND]</td></tr>
+          <tr><td class="pr-4 align-top whitespace-nowrap">2019</td><td>渋谷イノベーションウィーク “Interactive public bench”</td></tr>
+          <tr><td class="pr-4 align-top whitespace-nowrap">2022</td><td>エルメス銀座 “beautiful noise”サウンドデザイン</td></tr>
+          <tr><td class="pr-4 align-top whitespace-nowrap">2023</td><td>オーディオブック “Dark Time Job”</td></tr>
+          <tr><td class="pr-4 align-top whitespace-nowrap">2024</td><td>SIAF “未来のマチのサイン” サウンドデザイン</td></tr>
+          <tr><td class="pr-4 align-top whitespace-nowrap">2024</td><td>Moon Yurim 個展 “Upward The Farther, The Closer SOUL”</td></tr>
+          <tr><td class="pr-4 align-top whitespace-nowrap">2025</td><td>高輪ゲートウェイシティ “Tidal Sound Scape”</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 閉じるボタン（下に配置） -->
+    <button onclick="closeModal('modal-tomo')"
+        class="block ml-auto text-2xl text-gray-500 hover:text-black mt-4">
+  &times;
+</button>
 
 <script>
     // モーダル関数
