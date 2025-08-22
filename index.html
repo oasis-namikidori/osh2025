@@ -15,6 +15,14 @@
     html {
       scroll-behavior: smooth;
     }
+
+     @keyframes fade-in {
+    from { opacity: 0; transform: scale(0.95); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+  .animate-fade-in {
+    animation: fade-in 0.2s ease-out;
+  }
   </style>
 </head>
 <body class="text-sm leading-loose bg-white text-gray-800 font-sans" style="font-family: 'Noto Sans JP', sans-serif;">
@@ -24,17 +32,27 @@
                flex items-center justify-between relative overflow-visible">
   <!-- 左：PCナビ -->
   <nav class="hidden md:flex gap-6">
-    <a href="#about"  class="text-[#1195c8] hover:underline">ABOUT</a>
-    <a href="#shops"  class="text-[#1195c8] hover:underline">LINEUP</a>
-    <a href="#access" class="text-[#1195c8] hover:underline">ACCESS</a>
-  </nav>
+  <a href="#about" class="text-[#1195c8] hover:underline">ABOUT</a>
+  <a href="#artists" class="text-[#1195c8] hover:underline">ARTISTS</a>
+  <a href="#rice" class="text-[#1195c8] hover:underline">お米収穫祭</a>
+  <a href="#shops" class="text-[#1195c8] hover:underline">SHOPS</a>
+  <a href="#access" class="text-[#1195c8] hover:underline">ACCESS</a>
+</nav>
 
-  <!-- 右：ハンバーガー -->
-  <button id="menu-toggle" class="md:hidden text-3xl cursor-pointer" aria-label="Open menu">≡</button>
+  <!-- 右：Instagramアイコン + ハンバーガー -->
+  <div class="flex items-center gap-4">
+    <!-- Instagramアイコン（全サイズで表示） -->
+    <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
+      <img src="img/ig_c.png" alt="Instagram"
+           class="h-6 w-6 md:h-8 md:w-8 hover:opacity-80 transition-opacity duration-200">
+    </a>
+
+    <!-- ハンバーガーアイコン（スマホ表示のみ） -->
+    <button id="menu-toggle" class="md:hidden text-3xl cursor-pointer" aria-label="Open menu">≡</button>
+  </div>
 
   <!-- 中央：line.svg（上下左右ど真ん中 / クリック邪魔しない） -->
   <div class="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-    <!-- ★SP=PC同サイズ：レスポンシブ指定なし -->
     <img src="img/line.svg" alt="3本ライン" class="block h-[120px] md-:h-[180px] w-auto">
   </div>
 </header>
@@ -44,7 +62,9 @@
   class="md:hidden fixed top-20 w-full bg-white/90 px-8 py-4 space-y-2
          transition-all duration-300 ease-out transform scale-95 opacity-0 pointer-events-none z-40">
   <a href="#about" class="block text-[#1195c8] text-base">ABOUT</a>
-  <a href="#shops" class="block text-[#1195c8] text-base">LINEUP</a>
+  <a href="#artists" class="block text-[#1195c8] text-base">ARTISTS</a>
+  <a href="#rice" class="block text-[#1195c8] text-base">お米収穫祭</a>
+  <a href="#shops" class="block text-[#1195c8] text-base">SHOPS</a>
   <a href="#access" class="block text-[#1195c8] text-base">ACCESS</a>
 </nav>
 
@@ -103,53 +123,87 @@
   </h3>
 </section>
 
-  <!-- 出演者紹介 -->
-<section id="shops" class="scroll-mt-20 pt-10 md:pt-20 pb-20 px-6 bg-gray-100 text-center">
-    <h2 class="text-2xl font-light mb-8 text-[#1195c8]">LINEUP</h2>
-    <div class="grid md:grid-cols-3 gap-4 max-w-6xl mx-auto">
-      <div class="bg-white shadow p-6 rounded">
-        <h3 class="text-base font-semibold mb-2">Live painting</h3>
-        <p>〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎</p>
-      </div>
-      <div class="bg-white shadow p-6 rounded">
-        <h3 class="text-base font-semibold mb-2">DJs</h3>
-        <p>〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎</p>
-      </div>
-      <div class="bg-white shadow p-6 rounded">
-        <h3 class="text-base font-semibold mb-2">Shops</h3>
-        <p>〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎</p>
-      </div>
-     </div>
-      <!-- 1カラム囲み -->
-<div class="bg-white shadow p-6 rounded max-w-6xl mx-auto mt-4">
-  <h3 class="text-base font-semibold mb-4">おおいたOrganic Market 「新嘗祭」</h3>
+<!-- ARTISTSセクション -->
+<section id="artists" class="scroll-mt-20 pt-10 md:pt-20 pb-20 px-6 bg-gray-100 text-center">
+  <h2 class="text-2xl font-light mb-8 text-[#1195c8] text-center">ARTISTS</h2>
+  <div class="grid md:grid-cols-3 gap-4 max-w-6xl mx-auto">
 
-  <!-- 中のテキストをグリッド化 -->
-<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 text-left">
-    <p>〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇</br>
-    〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇</br>
-    〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇</br>
-    〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇</br>
-    〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇</br>
-    <p>〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇</br>
-    〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇</br>
-    〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇</br>
-    〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇</br>
-    〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇</br>
-    <p>〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇</br>
-    〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇</br>
-    〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇</br>
-    〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇</br>
-    〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇</br>
-    <p>〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇</br>
-    〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇</br>
-    〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇</br>
-    〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇</br>
-    〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇</br>
+    <!-- TOMO --> 
+   <div class="bg-white shadow rounded-lg p-10 text-center">
+  <div class="flex justify-center">
+    <img src="img/sample.jpg" alt="Tomo TAKAGI"
+         class="w-40 aspect-square object-cover rounded-lg mb-6 cursor-pointer"
+         onclick="openModal('modal-tomo')">
   </div>
+  <h3 class="text-base font-semibold">TOMO TAKAGI</h3>
+  <p class="text-sm">Sound Drawing Artist</p>
 </div>
+
+    <div class="bg-white shadow p-6 rounded">
+      <h3 class="text-base font-semibold mb-2">Gravity Free</h3>
+      <p>〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎</p>
     </div>
-  </section>
+    <div class="bg-white shadow p-6 rounded">
+      <h3 class="text-base font-semibold mb-2">TAKEUMA</h3>
+      <p>〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎</p>
+    </div>
+    
+    <!-- ２段目 -->
+    <div class="bg-white shadow p-6 rounded">
+      <h3 class="text-base font-semibold mb-2">ARTIST 4</h3>
+      <p>〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎</p>
+    </div>
+
+    <div class="bg-white shadow p-6 rounded">
+      <h3 class="text-base font-semibold mb-2">ARTIST 5</h3>
+      <p>〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎</p>
+    </div>
+
+    <div class="bg-white shadow p-6 rounded">
+      <h3 class="text-base font-semibold mb-2">ARTIST 6</h3>
+      <p>〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- お米収穫祭セクション -->
+<section id="rice" class="scroll-mt-20 pt-2 md:pt-20 pb-20 px-6 bg-gray-100 text-left">
+  <h2 class="text-2xl font-light mb-8 text-[#1195c8] text-center">お米収穫祭</h2>
+  <div class="grid md:grid-cols-3 gap-4 max-w-6xl mx-auto">
+    <div class="bg-white shadow p-6 rounded">
+      <h3 class="text-base font-semibold mb-2">Live painting</h3>
+      <p>〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎</p>
+    </div>
+    <div class="bg-white shadow p-6 rounded">
+      <h3 class="text-base font-semibold mb-2">DJs</h3>
+      <p>〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎</p>
+    </div>
+    <div class="bg-white shadow p-6 rounded">
+      <h3 class="text-base font-semibold mb-2">Shops</h3>
+      <p>〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎</p>
+    </div>
+  </div>
+</section>
+
+<!-- SHOPSセクション -->
+<section id="shops" class="scroll-mt-20 pt-2 md:pt-20 pb-20 px-6 bg-gray-100 text-left">
+  <h2 class="text-2xl font-light mb-8 text-[#1195c8] text-center">SHOPS</h2>
+  <div class="grid md:grid-cols-3 gap-4 max-w-6xl mx-auto">
+    <div class="bg-white shadow p-6 rounded">
+      <h3 class="text-base font-semibold mb-2">Live painting</h3>
+      <p>〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎</p>
+    </div>
+    <div class="bg-white shadow p-6 rounded">
+      <h3 class="text-base font-semibold mb-2">DJs</h3>
+      <p>〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎</p>
+    </div>
+    <div class="bg-white shadow p-6 rounded">
+      <h3 class="text-base font-semibold mb-2">Shops</h3>
+      <p>〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎</p>
+    </div>
+  </div>
+</section>
 
 <!-- アクセス -->
 <section id="access" class="scroll-mt-20 pt-10 md:pt-20 pb-10 px-6 text-center">
@@ -187,8 +241,52 @@
   ↑
 </a>
 
+  <!-- モーダル -->
+<div id="modal-tomo" class="fixed inset-0 z-50 bg-black/50 flex items-center justify-center hidden">
+  <div class="bg-white rounded-lg p-6 max-w-md w-[90%] relative text-center animate-fade-in">
+    
+    <!-- 閉じるボタン -->
+    <button onclick="closeModal('modal-tomo')" class="absolute top-2 right-2 text-2xl text-gray-500 hover:text-black">&times;</button>
+    
+    <!-- 中身 -->
+    <img src="img/sample.jpg"
+     alt="Tomo TAKAGI"
+     class="max-w-[340px] aspect-square object-cover rounded-lg my-6 mx-auto" />
+    
+    <h3 class="text-lg font-semibold">TOMO TAKAGI</h3>
+    <p class="text-sm">Sound Drawing Artist</p>
+
+    <!-- ★ 追加：説明テキスト -->
+    <p class="text-xs text-left mt-4 leading-relaxed mb-1">
+      “呼吸のできる音”をコンセプトに東京をベースに活動。ギタードローン、フィールドレコーディング、ラップトップ、音具を扱い音の軌跡を描く。<br>
+<table class="text-xs text-left leading-relaxed">
+  <tbody>
+    <tr><td class="pr-4 align-top whitespace-nowrap">2014</td><td>1st Album “Memorization”</td></tr>
+    <tr><td class="pr-4 align-top whitespace-nowrap">2017</td><td>ウェストフィヨルド グループレジデンス [ICELAND]</td></tr>
+    <tr><td class="pr-4 align-top whitespace-nowrap">2017―20</td><td>六本木ヒルズ スカイデッキ サウンドデザイン</td></tr>
+    <tr><td class="pr-4 align-top whitespace-nowrap">2018</td><td>Japanese Weekend “選択の恩恵” サウンドインスタレーション シンゲイリ [ICELAND]</td></tr>
+    <tr><td class="pr-4 align-top whitespace-nowrap">2019</td><td>渋谷イノベーションウィーク “Interactive public bench” </td></tr>
+    <tr><td class="pr-4 align-top whitespace-nowrap">2022</td><td>エルメス銀座 “beautiful noise”サウンドデザイン</td></tr>
+    <tr><td class="pr-4 align-top whitespace-nowrap">2023</td><td>オーディオブック（フィールドレコーディング+アンビエント+朗読）“Dark Time Job”</td></tr>
+    <tr><td class="pr-4 align-top whitespace-nowrap">2024</td><td>SIAF（札幌国際芸術祭）”未来のマチのサイン”アートインスタレーションサウンドデザイン</td></tr>
+    <tr><td class="pr-4 align-top whitespace-nowrap">2024</td><td>サウンドパフォーマンス Moon Yurim 個展 “Upward The Farther, The Closer SOUL</td></tr>
+    <tr><td class="pr-4 align-top whitespace-nowrap">2025</td><td>高輪ゲートウェイシティ “Tidal Sound Scape”、生成アンビエントサウンドデザイン</td></tr>
+  </tbody>
+</table>
+    </p>
+  </div>
+</div>
 
 <script>
+    // モーダル関数
+  function openModal(id) {
+    document.getElementById(id).classList.remove('hidden');
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).classList.add('hidden');
+  }
+
 document.addEventListener('DOMContentLoaded', () => {
   const menuToggle = document.getElementById('menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
