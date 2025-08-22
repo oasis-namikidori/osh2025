@@ -31,7 +31,8 @@
 <header class="fixed top-0 left-0 w-full h-20 bg-white z-50 px-6
                flex items-center justify-between relative overflow-visible">
   <!-- 左：PCナビ -->
-  <nav class="hidden md:flex gap-6">
+  <nav class="hidden xl:flex gap-6">
+
   <a href="#about" class="text-[#1195c8] hover:underline">ABOUT</a>
   <a href="#artists" class="text-[#1195c8] hover:underline">ARTISTS</a>
   <a href="#rice" class="text-[#1195c8] hover:underline">おおいた Organic Market</a>
@@ -50,19 +51,18 @@
 </a>
 
     <!-- ハンバーガーアイコン（スマホ表示のみ） -->
-    <button id="menu-toggle" class="md:hidden text-3xl cursor-pointer" aria-label="Open menu">≡</button>
+<button id="menu-toggle" class="xl:hidden text-3xl cursor-pointer" aria-label="Open menu">≡</button>
   </div>
 
   <!-- 中央：line.svg（上下左右ど真ん中 / クリック邪魔しない） -->
   <div class="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-    <img src="img/line.svg" alt="3本ライン" class="block h-[120px] md-:h-[180px] w-auto">
+    <img src="img/line.svg" alt="3本ライン" class="block h-[120px] md:h-[180px] w-auto">
   </div>
 </header>
 
 
-<nav id="mobile-menu"
-  class="md:hidden fixed top-20 w-full bg-white/90 px-8 py-4 space-y-2
-         transition-all duration-300 ease-out transform scale-95 opacity-0 pointer-events-none z-40">
+<nav id="mobile-menu" class="xl:hidden fixed top-20 w-full bg-white/90 px-8 py-4 space-y-2 transition-all duration-300 ease-out transform scale-95 opacity-0 pointer-events-none z-40">
+
   <a href="#about" class="block text-[#1195c8] text-base">ABOUT</a>
   <a href="#artists" class="block text-[#1195c8] text-base">ARTISTS</a>
   <a href="#rice" class="block text-[#1195c8] text-base">おおいた Organic Market</a>
@@ -131,7 +131,8 @@
 <!-- ARTISTSセクション -->
 <section id="artists" class="scroll-mt-20 pt-10 md:pt-20 pb-20 px-6 bg-gray-100 text-center">
   <h2 class="text-2xl font-light mb-8 text-[#1195c8] text-center">ARTISTS</h2>
-  <div class="grid md:grid-cols-3 gap-4 max-w-6xl mx-auto">
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
+
 
     <!-- TOMO --> 
    <div class="bg-white shadow rounded-lg p-10 text-center">
@@ -164,7 +165,7 @@
      onclick="openModal('modal-takeuma')">
   </div>
   <h3 class="text-base font-semibold">TAKEUMA</h3>
-  <p class="text-sm text-[#1195c8]">DJ
+  <p class="text-sm text-[#1195c8]">DJ</p>
 </div>
 
     
@@ -237,7 +238,7 @@
    <p class="text-sm md:text-base leading-loose max-w-4xl mx-auto mb-6 md:mb-8 text-left md:text-center">
     大分の田んぼとお米に暮らしの中で関わる方法を、生産者や専門家とともに考える参加型の新嘗祭。
     <br>地域の自然と文化を守る「田んぼの担い手」を増やしていきます。</p>
-  <div class="grid md:grid-cols-3 gap-4 max-w-6xl mx-auto">
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
     <div class="bg-white shadow p-6 rounded">
       <h3 class="text-base font-semibold mb-2">田んぼしよう</h3>
       <p class="text-left">〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎</p>
@@ -256,7 +257,7 @@
 <!-- SHOPSセクション -->
 <section id="shops" class="scroll-mt-20 pt-2 md:pt-20 pb-20 px-6 bg-gray-100 text-center">
   <h2 class="text-2xl font-light mb-8 text-[#1195c8] text-center">SHOPS</h2>
-  <div class="grid md:grid-cols-3 gap-4 max-w-6xl mx-auto">
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
     <div class="bg-white shadow p-6 rounded">
       <h3 class="text-base font-semibold mb-2">レコード販売</h3>
       <p class="text-left">〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎</p>
@@ -277,7 +278,7 @@
   <h2 class="text-2xl font-light mb-5 text-[#1195c8] text-center leading-[2.5rem]">FOODS</h2>
    <p class="text-sm md:text-base leading-loose max-w-4xl mx-auto mb-6 md:mb-8 text-left md:text-center">
     オアシス並木通り商店街の飲食店のフードやドリンクをお楽しみいただけます。</p>
-  <div class="grid md:grid-cols-3 gap-4 max-w-6xl mx-auto">
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
     <div class="bg-white shadow p-6 rounded">
       <h3 class="text-base font-semibold mb-2">〇〇〇〇〇〇</h3>
       <p class="text-left">〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎</p>
@@ -549,7 +550,7 @@
   <!-- 左側：名前と肩書き -->
   <div>
     <h3 class="text-lg font-semibold leading-tight">わだ  さくみ</h3>
-    <p class="text-sm text-[#1195c8] leading-tight mb-4 mt-1">アニメーション作家・イラストレーター<br><span class="text-xs"> [FUKUOKA]</span></p>
+    <p class="text-sm text-[#1195c8] leading-tight mb-4 mt-1">アニメーション作家<br>イラストレーター<br><span class="text-xs"> [FUKUOKA]</span></p>
   </div>
 
   <!-- 右側：インスタ -->
