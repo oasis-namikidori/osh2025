@@ -244,9 +244,23 @@
 
 <!-- モーダル -->
 <div id="modal-tomo"
-     class="fixed inset-0 z-50 bg-black/50 flex justify-center items-start px-4 pt-32 pb-10 overflow-y-auto min-h-screen">
+     class="fixed inset-0 z-50 bg-black/50 flex justify-center items-start px-4 pt-32 pb-10 overflow-y-auto min-h-screen hidden">
   
-  <div class="bg-white rounded-lg md:p-10 p-0 w-full max-w-md md:max-w-4xl text-center animate-fade-in relative h-auto">
+  <div class="bg-white rounded-lg md:p-10 p-0 w-full max-w-md md:max-w-4xl text-center animate-fade-in relative h-auto overflow-hidden">
+
+    <!-- スマホ用ヘッダー（×ボタン用） -->
+    <div class="block md:hidden w-full h-12 bg-white relative">
+      <button onclick="closeModal('modal-tomo')"
+              class="absolute top-2 right-4 text-2xl text-gray-500 hover:text-black z-10">
+        &times;
+      </button>
+    </div>
+
+    <!-- PC用 ×ボタン -->
+    <button onclick="closeModal('modal-tomo')"
+            class="hidden md:block absolute top-4 right-4 text-2xl text-gray-500 hover:text-black z-10">
+      &times;
+    </button>
 
     <!-- 中身：写真とテキスト -->
     <div class="flex flex-col md:flex-row md:items-start gap-6">
@@ -254,16 +268,17 @@
       <!-- 写真 -->
       <img src="img/sample.jpg"
      alt="Tomo TAKAGI"
-     class="w-full md:w-[340px] aspect-square object-cover rounded-t-lg md:rounded-lg md:mx-0 mx-auto mb-2 md:mb-0" />
+     class="w-full md:w-[340px] aspect-square object-cover rounded-t-lg md:rounded-lg md:mx-0 mx-auto mb-2 md:mb-0"
+     onclick="openModal('modal-tomo')" />
 
       <!-- テキスト -->
-      <div class="flex-1 text-left px-4 pt-6 md:pt-0 self-start">
-  <h3 class="text-lg md:text-2xl font-semibold">TOMO TAKAGI</h3>
-  <p class="text-sm md:text-base mb-4 text-gray-700">Sound Drawing Artist</p>
-  <p class="text-xs md:text-sm leading-snug md:leading-relaxed mb-6">
-          “呼吸のできる音” をコンセプトに東京をベースに活動。
-          ギタードローン、フィールドレコーディング、ラップトップ、音具を扱い音の軌跡を描く。
-        </p>
+      <div class="flex-1 text-left px-6 pt-0 md:pt-0 self-start">
+  <h3 class="text-lg font-semibold mb-1">TOMO TAKAGI</h3>
+  <p class="text-sm mb-4 text-gray-700">Sound Drawing Artist</p>
+  <p class="text-xs leading-snug mb-6">
+    “呼吸のできる音” をコンセプトに東京をベースに活動。
+    ギタードローン、フィールドレコーディング、ラップトップ、音具を扱い音の軌跡を描く。
+  </p>
 
         <!-- 年表 -->
         <table class="text-xs md:text-sm leading-relaxed w-full mb-10">
@@ -282,6 +297,8 @@
         </table>
       </div>
     </div>
+  </div>
+</div>
 
     <!-- 閉じるボタン（右下） -->
     <button onclick="closeModal('modal-tomo')"
@@ -297,7 +314,6 @@
   function openModal(id) {
     document.getElementById(id).classList.remove('hidden');
   }
-
   function closeModal(id) {
     document.getElementById(id).classList.add('hidden');
   }
