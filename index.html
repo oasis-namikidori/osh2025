@@ -243,45 +243,50 @@
 
 
 <!-- モーダル -->
-<div id="modal-tomo" class="fixed inset-0 z-50 bg-black/50 flex items-center justify-center px-4 py-8 overflow-auto">
-  <div class="bg-white rounded-lg p-6 md:p-10 max-w-md w-full text-center animate-fade-in">
+<div id="modal-tomo"
+     class="fixed inset-0 z-50 bg-black/50 flex justify-center px-4 pt-24 pb-16 overflow-y-auto">
+  <div class="bg-white rounded-lg p-6 max-w-md w-full text-center animate-fade-in relative">
 
-    <!-- 写真とテキスト -->
+    <!-- アーティスト写真 -->
     <img src="img/sample.jpg"
          alt="Tomo TAKAGI"
-         class="mx-auto mt-6 mb-4 w-[320px] aspect-square object-cover rounded-lg" />
-    
+         class="mx-auto mt-10 mb-4 w-full max-w-xs aspect-square object-cover rounded-lg" />
+
+    <!-- 名前と肩書き -->
     <h3 class="text-lg font-semibold mt-6">TOMO TAKAGI</h3>
     <p class="text-sm mb-6 text-gray-700">Sound Drawing Artist</p>
 
-    <!-- テキストエリアの左右余白を広げる -->
+    <!-- 説明 -->
     <p class="text-xs text-left leading-snug px-4 mb-6">
       “呼吸のできる音” をコンセプトに東京をベースに活動。ギタードローン、フィールドレコーディング、ラップトップ、音具を扱い音の軌跡を描く。
     </p>
 
     <!-- 年表 -->
-    <div class="px-2">
-      <table class="text-xs text-left leading-relaxed w-full mb-6">
+    <div class="px-4">
+      <table class="text-xs text-left leading-relaxed w-full mb-8">
         <tbody>
           <tr><td class="pr-4 align-top whitespace-nowrap">2014</td><td>1st Album “Memorization”</td></tr>
           <tr><td class="pr-4 align-top whitespace-nowrap">2017</td><td>ウェストフィヨルド グループレジデンス [ICELAND]</td></tr>
           <tr><td class="pr-4 align-top whitespace-nowrap">2017―20</td><td>六本木ヒルズ スカイデッキ サウンドデザイン</td></tr>
-          <tr><td class="pr-4 align-top whitespace-nowrap">2018</td><td>Japanese Weekend “選択の恩恵” サウンドインスタレーション シンゲイリ [ICELAND]</td></tr>
-          <tr><td class="pr-4 align-top whitespace-nowrap">2019</td><td>渋谷イノベーションウィーク “Interactive public bench”</td></tr>
-          <tr><td class="pr-4 align-top whitespace-nowrap">2022</td><td>エルメス銀座 “beautiful noise”サウンドデザイン</td></tr>
-          <tr><td class="pr-4 align-top whitespace-nowrap">2023</td><td>オーディオブック “Dark Time Job”</td></tr>
-          <tr><td class="pr-4 align-top whitespace-nowrap">2024</td><td>SIAF “未来のマチのサイン” サウンドデザイン</td></tr>
-          <tr><td class="pr-4 align-top whitespace-nowrap">2024</td><td>Moon Yurim 個展 “Upward The Farther, The Closer SOUL”</td></tr>
-          <tr><td class="pr-4 align-top whitespace-nowrap">2025</td><td>高輪ゲートウェイシティ “Tidal Sound Scape”</td></tr>
+          <tr><td class="pr-4 align-top whitespace-nowrap">2018</td><td>“選択の恩恵” サウンドインスタレーション シンゲイリ [ICELAND]</td></tr>
+          <tr><td class="pr-4 align-top whitespace-nowrap">2019</td><td>“Interactive public bench” 渋谷イノベーションウィーク</td></tr>
+          <tr><td class="pr-4 align-top whitespace-nowrap">2022</td><td>“beautiful noise” エルメス銀座 サウンドデザイン</td></tr>
+          <tr><td class="pr-4 align-top whitespace-nowrap">2023</td><td>“Dark Time Job” フィールドレコーディング＋朗読</td></tr>
+          <tr><td class="pr-4 align-top whitespace-nowrap">2024</td><td>“未来のマチのサイン” SIAF アートインスタレーション</td></tr>
+          <tr><td class="pr-4 align-top whitespace-nowrap">2024</td><td>“Upward The Farther…” Moon Yurim 個展サウンド</td></tr>
+          <tr><td class="pr-4 align-top whitespace-nowrap">2025</td><td>“Tidal Sound Scape” 高輪ゲートウェイ 生成サウンド</td></tr>
         </tbody>
       </table>
     </div>
 
-    <!-- 閉じるボタン（下に配置） -->
+    <!-- 閉じるボタン -->
     <button onclick="closeModal('modal-tomo')"
-        class="block ml-auto text-2xl text-gray-500 hover:text-black mt-4">
-  &times;
-</button>
+            class="block ml-auto text-3xl font-bold text-gray-500 hover:text-black mt-2">
+      &times;
+    </button>
+
+  </div>
+</div>
 
 <script>
     // モーダル関数
