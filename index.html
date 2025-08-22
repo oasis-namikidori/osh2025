@@ -118,9 +118,11 @@
 <section id="about" class="scroll-mt-20 pt-6 pb-20 px-6 bg-white text-center">
   <h2 class="text-2xl font-light mb-4 text-[#1195c8]">OASIS: STREET HARVEST<br><span class="text-sm">オアシス ストリートハーベスト</span>
 </h2>
-  <h3 class="text-sm md:text-base leading-loose max-w-2xl mx-auto">
-    「音楽」「アート」「食」のフリーイベント。<br>大分県の食文化と県内外のアーティストたちによる文化交流の場に。
-  </h3>
+ <h3 class="text-sm md:text-base leading-loose md:leading-[2rem] max-w-2xl mx-auto text-left md:text-center">
+  「音」と「米」がつなぐ、新しい街の景色。大分の誇る米農家や生産者と、
+  <br class="hidden md:inline">音楽・アートのクリエイターが出会う交流型ブロックパーティ。
+  <br class="hidden md:inline">都市型フェスの熱量と大分の食文化が融合、地域の魅力を新しい形で発信します。
+</h3>
 </section>
 
 <!-- ARTISTSセクション -->
@@ -131,9 +133,9 @@
     <!-- TOMO --> 
    <div class="bg-white shadow rounded-lg p-10 text-center">
   <div class="flex justify-center">
-    <img src="img/sample.jpg" alt="Tomo TAKAGI"
-         class="w-40 aspect-square object-cover rounded-lg mb-6 cursor-pointer"
-         onclick="openModal('modal-tomo')">
+    <img src="img/ph_1_tomo_takagi.jpg" alt="Tomo TAKAGI" loading="lazy"
+     class="w-40 aspect-square object-cover rounded-lg mb-6 cursor-pointer border-[12px]" style="border-color: #ffff00"
+     onclick="openModal('modal-tomo')">
   </div>
   <h3 class="text-base font-semibold">TOMO TAKAGI</h3>
   <p class="text-sm">Sound Drawing Artist</p>
@@ -246,7 +248,7 @@
 <div id="modal-tomo"
      class="fixed inset-0 z-50 bg-black/50 flex justify-center items-start px-4 pt-5 md:pt-32 pb-10 overflow-y-auto min-h-screen hidden">
   
-  <div class="bg-white rounded-lg md:p-10 p-0 w-full max-w-md md:max-w-4xl text-center animate-fade-in relative h-auto overflow-hidden">
+  <div class="bg-white rounded-lg md:p-10 p-0 w-full max-w-md md:max-w-[1000px] text-center animate-fade-in relative h-auto overflow-hidden">
 
     <!-- スマホ用ヘッダー（×ボタン用） -->
     <div class="block md:hidden w-full h-12 bg-white relative">
@@ -267,15 +269,16 @@
 
       <!-- 写真 -->
       <img src="img/sample.jpg"
-     alt="Tomo TAKAGI"
-     class="w-full md:w-[380px] aspect-square object-cover rounded-t-lg md:rounded-lg md:mx-0 mx-auto mb-2 md:mb-0"
+     alt="Tomo TAKAGI" 
+     loading="lazy"
+     class="w-full md:w-[420px] aspect-square object-cover rounded-t-lg md:rounded-lg md:mx-0 mx-auto mb-2 md:mb-0"
      onclick="openModal('modal-tomo')" />
 
       <!-- テキスト -->
       <div class="flex-1 text-left px-6 pt-0 md:pt-0 self-start">
   <h3 class="text-lg font-semibold mb-1">TOMO TAKAGI</h3>
-  <p class="text-sm mb-4 text-gray-700">Sound Drawing Artist</p>
-  <p class="text-xs leading-snug mb-6">
+  <p class="text-sm mb-6 text-[#1195c8]">Sound Drawing Artist</p>
+  <p class="text-xs md:text-sm leading-relaxed mb-4">
     “呼吸のできる音” をコンセプトに東京をベースに活動。
     ギタードローン、フィールドレコーディング、ラップトップ、音具を扱い音の軌跡を描く。
   </p>
