@@ -156,6 +156,17 @@
   <p class="text-sm text-[#1195c8]">絵画作家/Live Painting</p>
 </div>
 
+<!-- tn0bu --> 
+    <div class="bg-white shadow rounded-lg p-10 text-center">
+  <div class="flex justify-center">
+    <img src="img/ph_nobu.jpg" alt="tn0bu" loading="lazy"
+     class="w-40 aspect-square object-cover rounded-lg mb-6 cursor-pointer border-[12px]" style="border-color: #ffff00"
+     onclick="openModal('modal-nobu')">
+  </div>
+  <h3 class="text-base font-semibold">tn0bu（synergetics）</h3>
+  <p class="text-sm text-[#1195c8]">Machine Live</p>
+</div>
+
 
 <!-- TAKEUMA --> 
     <div class="bg-white shadow rounded-lg p-10 text-center">
@@ -169,7 +180,7 @@
 </div>
 
     
-    <!-- 2段目 -->
+
     <!-- わだ  さくみ --> 
    <div class="bg-white shadow rounded-lg p-10 text-center">
   <div class="flex justify-center">
@@ -204,7 +215,7 @@
   <p class="text-sm text-[#1195c8]">Machine Live</p>
 </div>
 
-<!-- 3段目 -->
+
    <!-- SHAVA ANDRE --> 
    <div class="bg-white shadow rounded-lg p-10 text-center">
   <div class="flex justify-center">
@@ -468,6 +479,75 @@
    <!-- 2人目 Gravity のモーダル 終了 --> 
 
 
+<!-- モーダル tn0bu -->
+<div id="modal-nobu"
+     class="fixed inset-0 z-50 bg-black/50 flex justify-center items-start px-4 pt-5 md:pt-32 pb-10 overflow-y-auto min-h-screen hidden">
+  
+  <div class="bg-white rounded-lg md:p-10 p-0 w-full max-w-md md:max-w-[1000px] text-center animate-fade-in relative h-auto overflow-hidden">
+
+    <!-- スマホ用ヘッダー（×ボタン用） -->
+    <div class="block md:hidden w-full h-12 bg-white relative">
+      <button onclick="closeModal('modal-nobu')"
+              class="absolute top-2 right-4 text-2xl text-gray-500 hover:text-black z-10">
+        &times;
+      </button>
+    </div>
+
+    <!-- PC用 ×ボタン -->
+    <button onclick="closeModal('modal-nobu')"
+            class="hidden md:block absolute top-4 right-4 text-2xl text-gray-500 hover:text-black z-10">
+      &times;
+    </button>
+
+    <!-- 中身：写真とテキスト -->
+    <div class="flex flex-col md:flex-row md:items-start gap-6">
+
+      <!-- 写真 -->
+      <img src="img/ph_nobu.jpg"
+     alt="Gravityfree" 
+     loading="lazy"
+     class="w-full md:w-[380px] aspect-square object-cover rounded-t-lg md:rounded-lg md:mx-0 mx-auto mb-2 md:mb-0"
+     onclick="openModal('modal-nobu')" />
+
+     <!-- テキスト -->
+    <div class="flex-1 text-left px-6 pt-0 md:pt-0 self-start">
+  <div class="flex justify-between items-start">
+  <!-- 左側：名前と肩書き -->
+  <div>
+    <h3 class="text-lg font-semibold leading-tight">tn0bu (synergetics)</h3>
+    <p class="text-sm text-[#1195c8] leading-tight mb-4 mt-1">Machine Live<br><span class="text-xs"> [TOKYO]</span></p>
+  </div>
+
+<!-- 右端：Instagram + Soundcloudアイコン -->
+<div class="flex items-center gap-3">
+  <!-- Instagramアイコン -->
+  <a href="https://www.instagram.com/tn0bu?igsh=am96eGt1N3FteWN5" 
+     target="_blank" aria-label="Instagram">
+    <img src="img/ig_c.png" alt="Instagram"
+         class="h-6 w-6 md:h-8 md:w-8 hover:opacity-80 transition-opacity duration-200">
+  </a>
+
+  <!-- Soundcloudリンクアイコン -->
+  <a href="https://soundcloud.com/user-559771902-308856530?ref=instagram&p=i&c=0&si=17AC1CBB7B89450AA888177A19E97FC1&utm_source=instagram&utm_medium=story&utm_campaign=social_sharing" 
+     target="_blank" aria-label="soundcloud">
+<img src="img/sound_cloudmark-black.png" alt=""
+     class="h-7 w-7 md:h-9 md:w-9 hover:opacity-80 transition-opacity duration-200">
+  </a>
+</div>
+</div>
+<p class="text-xs md:text-sm leading-[[1.5rem]] md:leading-[1.8rem] mb-4">
+  余白、ピアノ、ディレイを愛し、生成・相互作用・交換による音空間の成立に取り組む。 
+</p>
+
+<p class="text-xs md:text-sm leading-relaxed md:leading-[1.4rem] mt-2 mb-6">
+An artist who enjoys exploring space, piano, and delay, while crafting soundscapes that evolve, interact, and expand. He has performed live with a laptop and modular synthesizer at Tokyo ven…
+</p>
+</div>
+    </div>
+  </div>
+</div>
+   <!-- 3人目 tn0bu のモーダル 終了 -->    
+
 <!-- モーダル TAKEUMA -->
 <div id="modal-takeuma"
      class="fixed inset-0 z-50 bg-black/50 flex justify-center items-start px-4 pt-5 md:pt-32 pb-10 overflow-y-auto min-h-screen hidden">
@@ -522,7 +602,7 @@
     </div>
   </div>
 </div>
- <!-- 3人目 TAKEUMA のモーダル 終了 --> 
+ <!-- 4人目 TAKEUMA のモーダル 終了 --> 
 
 
 <!-- モーダル わだ さくみ -->
@@ -604,7 +684,7 @@
     </div>
   </div>
 </div>
-<!-- 4人目 わだ さくみ のモーダル 終了 -->
+<!-- 5人目 わだ さくみ のモーダル 終了 -->
     
 <!-- モーダル Bamboo Child -->
 <div id="modal-bamboo"
@@ -662,7 +742,7 @@ HIPHOPを軸にしたFUNKY&GROOVYな選曲とスキルフルなDJプレイが持
   </div>
 </div>
 
-<!-- 5人目 Bamboo Child のモーダル 終了 -->    
+<!-- 6人目 Bamboo Child のモーダル 終了 -->    
 
 <!-- モーダル Labo -->
 <div id="modal-labo"
@@ -713,7 +793,7 @@ HIPHOPを軸にしたFUNKY&GROOVYな選曲とスキルフルなDJプレイが持
   </div>
 </div>
 
- <!-- 6人目 Labo のモーダル 終了 --> 
+ <!-- 7人目 Labo のモーダル 終了 --> 
 
 <!-- モーダル SHAVA ANDRE -->
 <div id="modal-shava"
@@ -773,7 +853,7 @@ HIPHOPを軸にしたFUNKY&GROOVYな選曲とスキルフルなDJプレイが持
     </div>
   </div>
 </div>
- <!-- 7人目 SHAVA ANDRE のモーダル 終了 --> 
+ <!-- 8人目 SHAVA ANDRE のモーダル 終了 --> 
 
 
 <!-- モーダル SWEETWATER -->
@@ -828,7 +908,7 @@ HIPHOPを軸にしたFUNKY&GROOVYな選曲とスキルフルなDJプレイが持
   </div>
 </div>
 
-<!-- 8人目 SHAVA ANDRE のモーダル 終了 --> 
+<!-- 9人目 SHAVA ANDRE のモーダル 終了 --> 
 
 
 
