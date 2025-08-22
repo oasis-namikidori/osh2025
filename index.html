@@ -244,18 +244,19 @@
 
 <!-- モーダル -->
 <div id="modal-tomo"
-     class="fixed inset-0 z-50 bg-black/50 flex justify-center px-4 pt-32 pb-10 overflow-y-auto min-h-screen">
-  <div class="bg-white rounded-lg p-6 md:p-10 w-full max-w-md md:max-w-3xl text-center animate-fade-in relative">
+     class="fixed inset-0 z-50 bg-black/50 flex justify-center items-start px-4 pt-32 pb-10 overflow-y-auto min-h-screen">
+  
+  <div class="bg-white rounded-lg p-6 md:p-10 w-full max-w-md md:max-w-4xl text-center animate-fade-in relative h-auto">
 
-    <!-- PC: 横並び / スマホ: 縦並び -->
+    <!-- 中身：写真とテキスト -->
     <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
 
       <!-- 写真 -->
       <img src="img/sample.jpg"
            alt="Tomo TAKAGI"
-           class="w-full max-w-xs md:max-w-sm aspect-square object-cover rounded-lg mx-auto md:mx-0" />
+           class="w-full max-w-xs md:max-w-sm aspect-square object-cover rounded-lg mx-auto md:mx-0 mt-10" />
 
-      <!-- テキストエリア -->
+      <!-- テキスト -->
       <div class="flex-1 text-left">
         <h3 class="text-lg font-semibold mt-6 md:mt-0">TOMO TAKAGI</h3>
         <p class="text-sm mb-4 text-gray-700">Sound Drawing Artist</p>
@@ -265,7 +266,7 @@
         </p>
 
         <!-- 年表 -->
-        <table class="text-xs leading-relaxed w-full mb-6">
+        <table class="text-xs leading-relaxed w-full mb-10">
           <tbody>
             <tr><td class="pr-4 align-top whitespace-nowrap">2014</td><td>1st Album “Memorization”</td></tr>
             <tr><td class="pr-4 align-top whitespace-nowrap">2017</td><td>ウェストフィヨルド グループレジデンス [ICELAND]</td></tr>
@@ -282,9 +283,9 @@
       </div>
     </div>
 
-    <!-- 閉じるボタン -->
+    <!-- 閉じるボタン（右下） -->
     <button onclick="closeModal('modal-tomo')"
-            class="absolute top-4 right-4 text-2xl text-gray-500 hover:text-black z-10">
+            class="text-2xl text-gray-500 hover:text-black mt-4 ml-auto block">
       &times;
     </button>
   </div>
