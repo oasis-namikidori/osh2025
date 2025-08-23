@@ -990,7 +990,22 @@ document.addEventListener('DOMContentLoaded', () => {
       backToTop.classList.add('hidden');
     }
   });
-});
+
+  //
+  backToTop.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (mobileMenu) {
+      mobileMenu.classList.remove('opacity-100', 'scale-100');
+      mobileMenu.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+    }
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    setTimeout(() => {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+      window.scrollTo(0, 0);
+    }, 450);
+  });
+}); 
 </script>
 </body>
 </html>
