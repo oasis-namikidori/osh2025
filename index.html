@@ -23,7 +23,40 @@
   .animate-fade-in {
     animation: fade-in 0.2s ease-out;
   }
+
+/* 初期状態：透明 */
+.heroGroup {
+  opacity: 0;
+  will-change: opacity;
+}
+
+/* フェードイン */
+@keyframes heroFade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* 初期状態：透明＆ちょっと上（ライン） */
+.lineAnim {
+  opacity: 0;
+  transform: translateY(-40px);
+  transition: transform .6s ease, opacity .6s ease;
+  will-change: transform, opacity;
+}
+
+/* アニメ開始時：フェードインして中央へ（← ここに } を追加） */
+.play-lines #centerLinesWrap .lineAnim {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 主役：フェードインだけ（位置は動かさない） */
+.show-hero .heroGroup {
+  animation: heroFade 1100ms ease forwards;
+}
+
   </style>
+  
 </head>
 <body class="text-sm leading-loose bg-white text-gray-800 font-sans" style="font-family: 'Noto Sans JP', sans-serif;">
 
@@ -54,10 +87,15 @@
   </a>
 </div>
 
-  <!-- 中央：line.svg（上下左右ど真ん中 / クリック邪魔しない） -->
-  <div class="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+<!-- ヘッダー中央ライン：外枠はセンター固定、内側だけ動かす -->
+<div id="centerLinesWrap"
+     class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-50">
+  <div class="lineAnim">
+    <!-- ※imgのままでもsvg直書きでもOK -->
     <img src="img/line.svg" alt="3本ライン" class="block h-[120px] md:h-[180px] w-auto">
   </div>
+</div>
+
 </header>
 
 
@@ -73,14 +111,21 @@
 
 <!-- メインビジュアル -->
 <section class="w-full min-h-[600px] bg-white flex flex-col items-center justify-center text-center px-8 pt-16 md:pt-24">
-  <h1 class="text-sm leading-loose text-gray-600 tracking-widest mt-0">
-    オアシス並木通り商店街ブロックパーティー
-  </h1>
+
+  <!-- テキスト -->
+  <h1 id="heroText"
+    class="heroGroup text-sm leading-loose text-gray-600 tracking-widest mt-0">
+  オアシス並木通り商店街ブロックパーティー
+</h1>
+
   <div class="flex flex-col items-center gap-8">
-  <img src="img/logo1.svg" alt="OASIS STREET HARVEST 2025"
-     class="w-[70vw] md:w-[min(80vw,560px)] h-auto mb-4 mt-10">
-    <img src="img/logo2.svg" alt="音と米"
-         class="h-32 md:h-40 mb-6 md:mb-12" />
+    <!-- ロゴ1 -->
+    <img id="heroLogo" src="img/logo1.svg" alt="OASIS STREET HARVEST 2025"
+         class="heroGroup w-[70vw] md:w-[min(80vw,560px)] h-auto mb-4 mt-10">
+
+    <!-- ロゴ2 -->
+    <img id="heroLogo2" src="img/logo2.svg" alt="音と米"
+         class="heroGroup h-32 md:h-40 mb-6 md:mb-12" />
   </div>
 </section>
 
@@ -107,7 +152,7 @@
     <p class="text-base md:text-xl font-bold text-gray-700 mt-8 mb-6 tracking-widest">入場無料</p>
 
 <div class="text-sm leading-relaxed">
-  <p class="mb-1">後援：〇〇〇〇、〇〇〇〇</p>
+ <!-- <p class="mb-1">後援：〇〇〇〇、〇〇〇〇</p> -->
   <p>
     主催：<a href="http://oasis-namikidori.github.io" target="_blank">オアシス並木通り商店街
     <br class="block md:hidden" />
@@ -251,16 +296,8 @@
     <br>地域の自然と文化を守る「田んぼの担い手」を増やしていきます。</p>
   <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
     <div class="bg-white shadow p-6 rounded">
-      <h3 class="text-base font-semibold mb-2">田んぼしよう</h3>
-      <p class="text-left">〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎</p>
-    </div>
-    <div class="bg-white shadow p-6 rounded">
-      <h3 class="text-base font-semibold mb-2">大分県産のお米の試食体験</h3>
-      <p class="text-left">〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎</p>
-    </div>
-    <div class="bg-white shadow p-6 rounded">
-      <h3 class="text-base font-semibold mb-2">生産者によるトークセッション</h3>
-      <p class="text-left">〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎</p>
+    <!--    <h3 class="text-base font-semibold mb-2">田んぼしよう</h3> -->
+    <p class="text-left">Coming Soon</p>
     </div>
   </div>
 </section>
@@ -270,38 +307,23 @@
   <h2 class="text-2xl font-light mb-8 text-[#1195c8] text-center">SHOPS</h2>
   <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
     <div class="bg-white shadow p-6 rounded">
-      <h3 class="text-base font-semibold mb-2">〇〇〇〇〇〇</h3>
-      <p class="text-left">レコード販売〇◎〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎</p>
+    <!--   <h3 class="text-base font-semibold mb-2">〇〇〇〇〇〇</h3> -->
+      <p class="text-left">Coming Soon</p>
     </div>
-    <div class="bg-white shadow p-6 rounded">
-      <h3 class="text-base font-semibold mb-2">〇〇〇〇〇〇</h3>
-      <p class="text-left">Vintage clothing◎〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎</p>
-    </div>
-    <div class="bg-white shadow p-6 rounded">
-      <h3 class="text-base font-semibold mb-2">Minimal Skateboards</h3>
-      <p class="text-left">〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎</p>
-    </div>
+
   </div>
 </section>
 
-<!-- 飲食 -->
+<!-- 飲食
 <section id="foods" class="scroll-mt-20 pt-2 md:pt-20 pb-20 px-6 bg-gray-100  text-center">
   <h2 class="text-2xl font-light mb-5 text-[#1195c8] text-center leading-[2.5rem]">FOODS</h2>
    <p class="text-sm md:text-base leading-loose max-w-4xl mx-auto mb-6 md:mb-8 text-left md:text-center">
-    オアシス並木通り商店街の飲食店のフードやドリンクをお楽しみいただけます。</p>
+    オアシス並木通り商店街のサービスをお楽しみいただけます。</p>
   <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
     <div class="bg-white shadow p-6 rounded">
       <h3 class="text-base font-semibold mb-2">〇〇〇〇〇〇</h3>
       <p class="text-left">〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎</p>
-    </div>
-    <div class="bg-white shadow p-6 rounded">
-      <h3 class="text-base font-semibold mb-2">〇〇〇〇〇〇</h3>
-      <p class="text-left">〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎</p>
-    </div>
-    <div class="bg-white shadow p-6 rounded">
-      <h3 class="text-base font-semibold mb-2">〇〇〇〇〇〇</h3>
-      <p class="text-left">〇〇〇〇〇〇〇〇〇◎〇〇〇〇〇〇〇〇〇◎</p>
-    </div>
+   -->
   </div>
 </section>
 
@@ -944,6 +966,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileMenu = document.getElementById('mobile-menu');
   const menuLinks = mobileMenu.querySelectorAll('a');
   const backToTop = document.getElementById('backToTop');
+
+
+// ② ライン完了後にロゴをフェードイン
+setTimeout(() => {
+  document.documentElement.classList.add('show-logo');
+}, 800); // ライン700ms + 余裕100ms
+
+// ラインを遅らせて再生（例：1秒後）
+setTimeout(() => {
+  document.documentElement.classList.add('play-lines');
+}, 400);
+
+// 主役をさらに遅らせる（例：ライン後さらに0.8秒）
+setTimeout(() => {
+  document.documentElement.classList.add('show-hero');
+}, 1000);
+
 
   // スマホメニューのフェードアニメーション表示切り替え
   menuToggle.addEventListener('click', () => {
