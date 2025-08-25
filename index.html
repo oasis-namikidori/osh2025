@@ -62,7 +62,7 @@
 
   <!-- ヘッダー -->
 <header class="fixed top-0 left-0 w-full h-20 bg-white z-50 px-6
-               flex items-center justify-between relative overflow-visible">
+               flex items-center justify-between relative overflow-visible pt-[env(safe-area-inset-top)">
   <!-- 左：PCナビ -->
   <nav class="hidden xl:flex gap-6">
 
@@ -110,7 +110,7 @@
 </nav>
 
 <!-- メインビジュアル -->
-<section class="w-full min-h-[600px] bg-white flex flex-col items-center justify-center text-center px-8 pt-16 md:pt-24">
+<section class="w-full min-h-[600px] min-h-[100dvh] bg-white flex flex-col items-center justify-center text-center px-8 pt-16 md:pt-24">
 
   <!-- テキスト -->
   <h1 id="heroText"
@@ -962,6 +962,9 @@ HIPHOPを軸にしたFUNKY&GROOVYな選曲とスキルフルなDJプレイが持
   }
 
 document.addEventListener('DOMContentLoaded', () => {
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
   const menuToggle = document.getElementById('menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
   const menuLinks = mobileMenu.querySelectorAll('a');
