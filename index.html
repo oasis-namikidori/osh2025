@@ -306,10 +306,32 @@
 <section id="shops" class="scroll-mt-20 pt-2 md:pt-20 pb-20 px-6 bg-gray-100 text-center">
   <h2 class="text-2xl font-light mb-8 text-[#1195c8] text-center">SHOPS</h2>
   <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
-    <div class="bg-white shadow p-6 rounded">
-    <!--   <h3 class="text-base font-semibold mb-2">〇〇〇〇〇〇</h3> -->
-      <p class="text-left">Coming Soon</p>
-    </div>
+
+    <!-- SCLAP --> 
+    <div class="bg-white shadow rounded-lg p-10 text-center">
+  <div class="flex justify-center">
+    <img src="img/SCLAP_logo.jpg" alt="SCLAP" loading="lazy"
+     class="w-40 aspect-square object-cover rounded-lg mb-6 cursor-pointer border-[12px]" style="border-color: #9dedfe"
+     onclick="openModal('modal-sclap')">
+  </div>
+  <h3 class="text-base font-semibold">SCLAP & okanSclap</h3>
+  <p class="text-sm text-[#1195c8]">Apparel</p>
+</div>
+
+
+     <!-- minimal skateboards --> 
+    <div class="bg-white shadow rounded-lg p-10 text-center">
+  <div class="flex justify-center">
+    <img src="img/minimal-skateboards_logo.jpg" alt="SCLAP" loading="lazy"
+     class="w-40 aspect-square object-cover rounded-lg mb-6 cursor-pointer border-[12px]" style="border-color: #9dedfe"
+     onclick="openModal('modal-minimal')">
+  </div>
+ <h3 class="text-base font-semibold leading-tight">
+  minimal skateboards<br>
+  <span class="text-xs font-normal leading-loose">ミニマル・スケートボード</span>
+    <p class="text-sm text-[#1195c8] font-normal">Skateboard/Apparel</p>
+</h3>
+ 
 
   </div>
 </section>
@@ -950,6 +972,138 @@ HIPHOPを軸にしたFUNKY&GROOVYな選曲とスキルフルなDJプレイが持
 
 <!-- 9人目 SHAVA ANDRE のモーダル 終了 --> 
 
+
+
+<!-- モーダル SHOPS -->
+ <!-- モーダル1 SCLAP -->
+<div id="modal-sclap"
+     class="fixed inset-0 z-50 bg-black/50 flex justify-center items-start px-4 pt-5 md:pt-32 pb-10 overflow-y-auto min-h-screen hidden">
+  
+  <div class="bg-white rounded-lg md:p-10 p-0 w-full max-w-md md:max-w-[1000px] text-center animate-fade-in relative h-auto overflow-hidden">
+
+    <!-- スマホ用ヘッダー（×ボタン用） -->
+    <div class="block md:hidden w-full h-12 bg-white relative">
+      <button onclick="closeModal('modal-sclap')"
+              class="absolute top-2 right-4 text-2xl text-gray-500 hover:text-black z-10">
+        &times;
+      </button>
+    </div>
+
+    <!-- PC用 ×ボタン -->
+    <button onclick="closeModal('modal-sclap')"
+            class="hidden md:block absolute top-4 right-4 text-2xl text-gray-500 hover:text-black z-10">
+      &times;
+    </button>
+
+    <!-- 中身：写真とテキスト -->
+    <div class="flex flex-col md:flex-row md:items-start gap-6">
+
+      <!-- 写真 -->
+      <img src="img/SCLAP_logo.jpg"
+     alt="SCLAP & okanSclap" 
+     loading="lazy"
+     class="w-full md:w-[380px] aspect-square object-cover rounded-t-lg md:rounded-lg md:mx-0 mx-auto mb-2 md:mb-0"
+     onclick="openModal('modal-sclap')" />
+
+     <!-- テキスト -->
+    <div class="flex-1 text-left px-6 pt-0 md:pt-0 self-start">
+  <div class="flex justify-between items-start">
+  <!-- 左側：名前と肩書き -->
+  <div>
+    <h3 class="text-lg font-semibold leading-tight">SCLAP & okanSclap</h3>
+    <p class="text-xs text-[#1195c8] leading-tight mb-4 mt-1">[FUKUOKA]</p>
+  </div>
+
+<!-- 右端：Instagram + WEBサイトアイコン -->
+<div class="flex items-center gap-3">
+  <!-- Instagramアイコン -->
+  <a href="https://www.instagram.com/sclap_okansclap?utm_source=ig_web_button_share_sheet&igsh=MjhhaDNtbmg3ZWNx" 
+     target="_blank" aria-label="Instagram">
+    <img src="img/ig_c.png" alt="Instagram"
+         class="h-6 w-6 md:h-8 md:w-8 hover:opacity-80 transition-opacity duration-200">
+  </a>
+</div>
+</div>
+  <p class="text-xs md:text-sm leading-loose md:leading-[1.8rem] mb-5">
+私達は服屋であり服飾作家の夫婦です。並んでいるものは全て私達が作っています。生地などの材料を仕入れ、パターン(型紙)を作り、裁断をし縫製する。洗濯して生地に付いているのりや余分な染料を落とし、乾燥機にかけて縮め仕上げをします。それら出来上がった服を私達で販売する。そんなミニマムなブランドであり服屋であります。<span class="block mb-3"></span>
+テーマは幾つかありますが、最大のテーマは “着心地の良い服” を作ることです。良い生地は纏うだけで心地よいのですが、それを心地よい服にするにはストレスの掛からない形と縫製仕様が必要となります。パターン(型紙)と縫い手順を工夫することでそれに近づいていると実感しています。<span class="block mb-3"></span>
+型紙が揃い縫製仕様が定まってベースが出来たと思い昨年から少しずつですが次の段階に進みはじめました。ベーシックなものからマスターピースまで様々な服が並ぶ服屋に。<span class="block mb-3"></span>
+仕入れをするように一点ずつ服を作っていく。<br>
+今の私達はこのような感じです。</p>
+      </div>
+    </div>
+  </div>
+</div>
+   <!-- SCLAP のモーダル 終了 --> 
+
+   
+ <!-- モーダル2 minimal skate -->
+<div id="modal-minimal"
+     class="fixed inset-0 z-50 bg-black/50 flex justify-center items-start px-4 pt-5 md:pt-32 pb-10 overflow-y-auto min-h-screen hidden">
+  
+  <div class="bg-white rounded-lg md:p-10 p-0 w-full max-w-md md:max-w-[1000px] text-center animate-fade-in relative h-auto overflow-hidden">
+
+    <!-- スマホ用ヘッダー（×ボタン用） -->
+    <div class="block md:hidden w-full h-12 bg-white relative">
+      <button onclick="closeModal('modal-minimal')"
+              class="absolute top-2 right-4 text-2xl text-gray-500 hover:text-black z-10">
+        &times;
+      </button>
+    </div>
+
+    <!-- PC用 ×ボタン -->
+    <button onclick="closeModal('modal-minimal')"
+            class="hidden md:block absolute top-4 right-4 text-2xl text-gray-500 hover:text-black z-10">
+      &times;
+    </button>
+
+    <!-- 中身：写真とテキスト -->
+    <div class="flex flex-col md:flex-row md:items-start gap-6">
+
+      <!-- 写真 -->
+      <img src="img/minimal-skateboards_logo.jpg"
+     alt="minimal skateboards" 
+     loading="lazy"
+     class="w-full md:w-[380px] aspect-square object-cover rounded-t-lg md:rounded-lg md:mx-0 mx-auto mb-2 md:mb-0"
+     onclick="openModal('modal-minimal')" />
+
+     <!-- テキスト -->
+    <div class="flex-1 text-left px-6 pt-0 md:pt-0 self-start">
+  <div class="flex justify-between items-start">
+  <!-- 左側：名前と肩書き -->
+  <div>
+    <h3 class="text-lg font-semibold leading-none">minimal skateboards<br>
+      <span class="text-xs font-normal">ミニマル・スケートボード</span></h3>
+    <p class="text-xs text-[#1195c8] mb-4 mt-1">[OITA]</p>
+  </div>
+
+<!-- 右端：Instagram + WEBサイトアイコン -->
+<div class="flex items-center gap-3">
+  <!-- Instagramアイコン -->
+  <a href="https://www.instagram.com/cafe.minimal.skateboards?utm_source=ig_web_button_share_sheet&igsh=MXZpZ2xrN2J2dzE1bA==" 
+     target="_blank" aria-label="Instagram">
+    <img src="img/ig_c.png" alt="Instagram"
+         class="h-6 w-6 md:h-8 md:w-8 hover:opacity-80 transition-opacity duration-200">
+  </a>
+
+  <!-- WEBサイトリンクアイコン -->
+  <a href="https://minimalskate.com/" 
+     target="_blank" aria-label="公式サイト">
+    <img src="img/weblink.svg" alt="公式サイト"
+         class="h-6 w-6 md:h-8 md:w-8 hover:opacity-80 transition-opacity duration-200">
+  </a>
+</div>
+</div>
+  <p class="text-xs md:text-sm leading-loose md:leading-[1.8rem] mb-5">
+名前はスケートボードですが、実は スニーカーや靴下、アパレルなどファッションアイテムも豊富に取りそろえています。普段スケートをしない方でも気軽に楽しめるお店です。
+イベントでは、人気のスニーカーやウェアを中心にご紹介予定。<span class="block mb-3"></span>
+「スケートショップってちょっと入りにくい…」という方にも、ファッションやカルチャーを楽しむ感覚で立ち寄っていただけると嬉しいです。
+</p>
+      </div>
+    </div>
+  </div>
+</div>
+   <!-- minimal skate のモーダル 終了 --> 
 
 
 <script>
