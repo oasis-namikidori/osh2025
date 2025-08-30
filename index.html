@@ -67,7 +67,6 @@
   </style>
   
 </head>
-<body class="text-sm leading-loose bg-white text-gray-800 font-sans" style="font-family: 'Noto Sans JP', sans-serif;">
 
   <!-- ヘッダー -->
 <header class="fixed top-0 left-0 w-full h-20 bg-white z-50 px-6
@@ -82,17 +81,21 @@
 <!-- <a href="#foods" class="text-[#1195c8] hover:underline">FOODS</a> -->
   <a href="#access" class="text-[#1195c8] hover:underline">ACCESS</a>
 </nav>
+<div id="menu-overlay" class="xl:hidden fixed inset-0 bg-black/40 z-40 hidden"></div>
 
 <!-- 右：ハンバーガー + Instagramアイコン -->
 <div class="flex items-center gap-4">
-  <!-- ハンバーガーアイコン（スマホ表示のみ） -->
-  <button id="menu-toggle" class="xl:hidden text-4xl cursor-pointer" aria-label="Open menu">≡</button>
+<!-- スマホだけ表示 (xl以上では非表示) -->
+<button id="menu-toggle"
+  class="xl:hidden fixed left-3 top-3 z-[60] text-4xl bg-white/100 rounded-full w-12 h-12
+         flex items-center justify-center shadow border border-white/80"
+  aria-label="Open menu" aria-expanded="false">≡</button>
 
   <!-- Instagramアイコン（全サイズで表示） -->
   <a href="https://www.instagram.com/oasis_street_harvest?igsh=dzVubjA3ZGtvYWVp&utm_source=qr" target="_blank" aria-label="Instagram"
-     class="inline-block mt-[2px] md:mt-0">
+     class="inline-block mt-[1px] md:mt-1 ml-12">
     <img src="img/ig_c.png" alt="Instagram"
-         class="h-6 w-6 md:h-8 md:w-8 hover:opacity-80 transition-opacity duration-200">
+         class="h-7 w-7 md:h-8 md:w-8 hover:opacity-80 transition-opacity duration-200">
   </a>
 </div>
 
@@ -108,15 +111,20 @@
 </header>
 
 
-<nav id="mobile-menu" class="xl:hidden fixed top-20 w-full bg-white/90 px-8 py-4 space-y-5 transition-all duration-300 ease-out transform scale-95 opacity-0 pointer-events-none z-40">
-
-  <a href="#about" class="block text-[#1195c8] text-base">ABOUT</a>
+<nav id="mobile-menu"
+  class="xl:hidden fixed inset-y-0 left-0 w-60 max-w-[70vw] bg-white/100 px-6 py-6 space-y-5
+         transition-transform duration-300 ease-out -translate-x-full z-50 shadow-xl">
+  <button id="menu-close" class="text-3xl mb-2">×</button>
+  <a href="#about"   class="block text-[#1195c8] text-base">ABOUT</a>
   <a href="#artists" class="block text-[#1195c8] text-base">ARTISTS</a>
-  <a href="#rice" class="block text-[#1195c8] text-base">おおいた Organic Market</a>
-  <a href="#shops" class="block text-[#1195c8] text-base">SHOPS</a>
-<!-- <a href="#foods" class="block text-[#1195c8] text-base">FOODS</a> -->
-  <a href="#access" class="block text-[#1195c8] text-base">ACCESS</a>
+  <a href="#rice"    class="block text-[#1195c8] text-base">おおいた Organic Market</a>
+  <a href="#shops"   class="block text-[#1195c8] text-base">SHOPS</a>
+  <a href="#access"  class="block text-[#1195c8] text-base">ACCESS</a>
+<!-- <a href="./timetable/" class="block text-[#1195c8] text-base">TIMETABLE</a> -->
 </nav>
+
+<!-- メニューの直後に追加 -->
+<div id="menu-overlay" class="fixed inset-0 bg-black/40 z-40 hidden"></div>
 
 <!-- メインビジュアル -->
 <section class="w-full min-h-[600px] min-h-[100dvh] bg-white flex flex-col items-center justify-center text-center px-8 pt-16 md:pt-24">
@@ -409,11 +417,18 @@ VERIO<br>
 </div>
 
   <!-- フッター -->
-<footer class="scroll-mt-20 py-8 bg-[#2ea6c9] text-center text-sm text-white"> 
-  <a href="https://oasis-namikidori.github.io/" target="_blank">&copy; 2025 オアシス並木通り商店街 All rights reserved.</a>｜ 
-  <a href="https://www.instagram.com/oasis_street_harvest?igsh=dzVubjA3ZGtvYWVp&utm_source=qr" target="_blank" class="inline-block relative top-2.5 hover:opacity-80">
-    <img src="img/ig.png" alt="Instagram" class="h-8 w-8">
-  </a>
+<footer class="scroll-mt-20 py-6 bg-[#2ea6c9] text-center text-sm text-white">
+  <div class="flex items-center justify-center gap-3">
+    <a href="https://oasis-namikidori.github.io/" target="_blank" class="leading-none">
+      &copy; 2025 オアシス並木通り商店街 All rights reserved.
+    </a>
+    <span class="leading-none select-none">｜</span>
+    <a href="https://www.instagram.com/oasis_street_harvest?igsh=dzVubjA3ZGtvYWVp&utm_source=qr"
+       target="_blank"
+       class="inline-flex items-center justify-center hover:opacity-80">
+      <img src="img/ig.png" alt="Instagram" class="h-8 w-8">
+    </a>
+  </div>
 </footer>
 
 <a href="#" id="backToTop"
@@ -1306,43 +1321,6 @@ setTimeout(() => {
 }, 1000);
 
 
-  // スマホメニューのフェードアニメーション表示切り替え
-  menuToggle.addEventListener('click', () => {
-    const isVisible = mobileMenu.classList.contains('opacity-100');
-
-    if (isVisible) {
-      mobileMenu.classList.remove('opacity-100', 'scale-100');
-      mobileMenu.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
-    } else {
-      mobileMenu.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
-      mobileMenu.classList.add('opacity-100', 'scale-100');
-    }
-  });
-
-  // ページ内リンクでスクロール＋メニューを閉じる
-  menuLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const targetId = link.getAttribute('href').replace('#', '');
-      const targetElement = document.getElementById(targetId);
-
-      if (targetElement) {
-        const headerOffset = 80;
-        const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-        const offsetPosition = elementPosition - headerOffset;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
-      }
-
-      // メニューをフェードアウト
-      mobileMenu.classList.remove('opacity-100', 'scale-100');
-      mobileMenu.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
-    });
-  });
-
   // トップへ戻るボタンの表示切り替え
   window.addEventListener('scroll', () => {
     if (window.scrollY > 300) {
@@ -1355,10 +1333,6 @@ setTimeout(() => {
   //
   backToTop.addEventListener('click', (e) => {
     e.preventDefault();
-    if (mobileMenu) {
-      mobileMenu.classList.remove('opacity-100', 'scale-100');
-      mobileMenu.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
-    }
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
     setTimeout(() => {
       document.body.scrollTop = 0;
@@ -1368,5 +1342,70 @@ setTimeout(() => {
   });
 }); 
 </script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuClose  = document.getElementById('menu-close');
+  const overlay    = document.getElementById('menu-overlay');
+
+  // 念のため：旧クラスの遺骸を初期化で除去
+  mobileMenu?.classList.remove('hidden','opacity-0','pointer-events-none','scale-95','transform');
+
+  function openMenu() {
+    mobileMenu.classList.remove('-translate-x-full');
+    overlay?.classList.remove('hidden');
+    menuToggle?.setAttribute('aria-expanded','true');
+    document.documentElement.style.overflow = 'hidden';
+  }
+  function closeMenu() {
+    mobileMenu.classList.add('-translate-x-full');
+    overlay?.classList.add('hidden');
+    menuToggle?.setAttribute('aria-expanded','false');
+    document.documentElement.style.overflow = '';
+  }
+
+  // トグル（1回で開閉）
+  menuToggle?.addEventListener('click', () => {
+    if (mobileMenu.classList.contains('-translate-x-full')) openMenu();
+    else closeMenu();
+  });
+
+  menuClose?.addEventListener('click', closeMenu);
+  overlay?.addEventListener('click', closeMenu);
+
+  // メニュー内リンク
+  const menuLinks = mobileMenu?.querySelectorAll('a') ?? [];
+  menuLinks.forEach(a => {
+    a.addEventListener('click', (e) => {
+      const href = a.getAttribute('href') || '';
+      // まず閉じる（黒幕解除）
+      closeMenu();
+
+      // ページ内リンクならデフォルト抑止してスムーススクロール
+      if (href.startsWith('#')) {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          const headerOffset = 80;
+          const y = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      }
+      // 別ページはそのまま遷移（黒幕は closeMenu 済みなので残らない）
+    });
+  });
+
+  // ページ遷移・戻る（bfcache）対策：戻ってきても常に閉じた状態に
+  window.addEventListener('pageshow', () => {
+    closeMenu();
+  });
+  window.addEventListener('beforeunload', () => {
+    closeMenu();
+  });
+});
+</script>
+
 </body>
 </html>
