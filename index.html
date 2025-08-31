@@ -85,19 +85,24 @@
 <!-- <a href="#foods" class="text-[#1195c8] hover:underline">FOODS</a> -->
   <a href="#access" class="text-[#1195c8] hover:underline">ACCESS</a>
 </nav>
-<div id="menu-overlay" class="xl:hidden fixed inset-0 bg-black/40 z-40 hidden"></div>
+<div id="menu-overlay" class="xl:hidden fixed inset-0 bg-white/40 z-40 hidden"></div>
 
 <!-- 右：ハンバーガー + Instagramアイコン -->
 <div class="flex items-center gap-4">
 <!-- スマホだけ表示 (xl以上では非表示) -->
 <button id="menu-toggle"
-  class="xl:hidden fixed left-3 top-3 z-[60] text-4xl bg-white/100 rounded-full w-12 h-12
-         flex items-center justify-center shadow border border-white/80"
-  aria-label="Open menu" aria-expanded="false">≡</button>
+  class="xl:hidden fixed left-4 top-6 z-[70] bg-white rounded-full w-11 h-11
+         flex flex-col items-center justify-center gap-[6px] shadow border border-white/80"
+  aria-label="Open menu" aria-expanded="false">
+  <span class="sr-only">Open menu</span>
+  <span class="block w-6 h-0.5 bg-[#24471d] rounded"></span>
+  <span class="block w-6 h-0.5 bg-[#24471d] rounded"></span>
+  <span class="block w-6 h-0.5 bg-[#24471d] rounded"></span>
+</button>
 
   <!-- Instagramアイコン（全サイズで表示） -->
   <a href="https://www.instagram.com/oasis_street_harvest?igsh=dzVubjA3ZGtvYWVp&utm_source=qr" target="_blank" aria-label="Instagram"
-     class="inline-block mt-[1px] md:mt-1 ml-12">
+     class="inline-block mt-[17px] md:mt-1 ml-12">
     <img src="img/ig_c.png" alt="Instagram"
          class="h-7 w-7 md:h-8 md:w-8 hover:opacity-80 transition-opacity duration-200">
   </a>
@@ -128,7 +133,7 @@
 </nav>
 
 <!-- メニューの直後に追加 -->
-<div id="menu-overlay" class="fixed inset-0 bg-black/40 z-40 hidden"></div>
+<div id="menu-overlay" class="fixed inset-0 bg-white/40 z-40 hidden"></div>
 
 <!-- メインビジュアル -->
 <section class="w-full min-h-[600px] min-h-[100dvh] bg-white flex flex-col items-center justify-center text-center px-8 pt-16 md:pt-24">
@@ -436,7 +441,7 @@ VERIO<br>
 </footer>
 
 <a href="#" id="backToTop"
-   class="fixed bottom-4 right-4 w-12 h-12 bg-[#1195c8] text-white text-xl
+   class="fixed bottom-48 right-4 w-12 h-12 bg-[#1195c8] text-white text-xl
           flex items-center justify-center text-center leading-none
           rounded-full shadow hover:bg-[#1195c8] z-50 hidden
           border border-white">
