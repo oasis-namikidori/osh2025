@@ -66,6 +66,21 @@
   animation: heroFade 1100ms ease forwards;
 }
 
+/* モーダル内SNSアイコンを一括で少し大きく */
+[id^="modal-"] a img[alt="Instagram"],
+[id^="modal-"] a img[alt="Mixcloud"],
+[id^="modal-"] a img[alt="Soundcloud"],
+[id^="modal-"] a img[alt="公式サイト"] {
+  width: 30px; height: 30px;
+}
+@media (min-width: 768px) {
+  [id^="modal-"] a img[alt="Instagram"],
+  [id^="modal-"] a img[alt="Mixcloud"],
+  [id^="modal-"] a img[alt="Soundcloud"],
+  [id^="modal-"] a img[alt="公式サイト"] {
+    width: 36px; height: 36px;
+  }
+  }
   </style>
   
 </head>
@@ -102,7 +117,7 @@
 
   <!-- Instagramアイコン（全サイズで表示） -->
   <a href="https://www.instagram.com/oasis_street_harvest?igsh=dzVubjA3ZGtvYWVp&utm_source=qr" target="_blank" aria-label="Instagram"
-     class="inline-block mt-[20px] md:mt-1 ml-14">
+     class="inline-block mt-[20px] md:mt-5 ml-14">
     <img src="img/ig_c.png" alt="Instagram"
          class="h-7 w-7 md:h-8 md:w-8 hover:opacity-80 transition-opacity duration-200">
   </a>
