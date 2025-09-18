@@ -468,7 +468,8 @@ VERIO<br>
      onclick="openModal('modal-bathing')">
   </div>
  <h3 class="text-base font-semibold leading-tight">
-ベイシングレコード
+ベイシングレコード<br>
+ <span class="text-xs font-normal leading-loose">Bathing Records</span>
 </h3>
 </div>
 
@@ -1349,7 +1350,7 @@ HIPHOPを軸にしたFUNKY&GROOVYな選曲とスキルフルなDJプレイが持
   <div class="flex justify-between items-start">
   <!-- 左側：名前と肩書き -->
   <div>
-    <h3 class="text-lg font-semibold leading-none">VERIO<br>
+    <h3 class="text-lg font-semibold leading-none">VERIO<br></h3>
     <p class="text-xs text-[#1195c8] mb-4 mt-1 font-normal">[OITA]</p>
   </div>
 
@@ -1357,7 +1358,7 @@ HIPHOPを軸にしたFUNKY&GROOVYな選曲とスキルフルなDJプレイが持
 <div class="flex items-center gap-3">
   <!-- Instagramアイコン -->
   <a href="https://www.instagram.com/verio_store/?hl=ja" 
-     target="_blank" rel="noopener noreferrer" rel="noopener noreferrer" aria-label="Instagram">
+     target="_blank" rel="noopener noreferrer" aria-label="Instagram">
     <img src="img/ig_c.png" alt="Instagram"
          class="h-6 w-6 md:h-8 md:w-8 hover:opacity-80 transition-opacity duration-200">
   </a>
@@ -1406,46 +1407,45 @@ HIPHOPを軸にしたFUNKY&GROOVYな選曲とスキルフルなDJプレイが持
 
       <!-- 写真 -->
       <img src="img/bathing_logo.jpg"
-     alt="VERIO" 
-     loading="lazy"
-     class="w-full md:w-[380px] aspect-square object-cover rounded-t-lg md:rounded-lg md:mx-0 mx-auto mb-2 md:mb-0"
-     onclick="openModal('modal-bathing')" />
+           alt="Bathing Records" 
+           loading="lazy"
+           class="w-full md:w-96 aspect-square object-cover rounded-t-lg md:rounded-lg md:mx-0 mx-auto mb-2 md:mb-0"
+           onclick="openModal('modal-bathing')" />
 
-     <!-- テキスト -->
-    <div class="flex-1 text-left px-6 pt-0 md:pt-0 self-start">
-  <div class="flex justify-between items-start">
-  <!-- 左側：名前と肩書き -->
-  <div>
-    <h3 class="text-lg font-semibold leading-none">ベイシングレコード<br>
-    <p class="text-xs text-[#1195c8] mb-4 mt-1 font-normal">[OITA]</p>
-  </div>
+      <!-- テキスト列（モバイルはpx-6あり） -->
+      <div class="flex-1 text-left px-6 pt-0 md:pt-0 self-start">
 
-<!-- 右端：Instagram + WEBサイトアイコン -->
-<div class="flex items-center gap-3">
-  <!-- Instagramアイコン -->
-  <a href="https://www.instagram.com/bathingrecords/?hl=ja" 
-     target="_blank" rel="noopener noreferrer" rel="noopener noreferrer" aria-label="Instagram">
-    <img src="img/ig_c.png" alt="Instagram"
-         class="h-6 w-6 md:h-8 md:w-8 hover:opacity-80 transition-opacity duration-200">
-  </a>
+        <!-- 行：左テキスト（縮む）/ 右アイコン（縮まない＆右端固定） -->
+        <div class="flex items-start w-full">
+          <!-- 左：タイトル＋エリア（縮め可。長ければ自然に折り返し） -->
+          <div class="flex-1 min-w-0">
+            <h3 class="text-lg font-semibold leading-none">ベイシングレコード</h3>
+            <p class="text-xs text-[#1195c8] mb-4 mt-1 font-normal">[OITA]</p>
+          </div>
 
-  <!-- WEBサイトリンクアイコン -->
-  <a href="https://bathingrecords.com/" 
-     target="_blank" rel="noopener noreferrer" aria-label="公式サイト">
-    <img src="img/weblink.svg" alt="公式サイト"
-         class="h-6 w-6 md:h-8 md:w-8 hover:opacity-80 transition-opacity duration-200">
-  </a>
-</div>
-</div>
-  <p class="text-xs md:text-sm leading-loose md:leading-[1.8rem] mb-5">
-オールジャンルのレコード・CDの販売。<br>
-</p>
+          <!-- 右：アイコン（縮まない・右端へ押し切る） -->
+          <div class="flex items-center gap-3 shrink-0 ml-auto">
+            <a href="https://www.instagram.com/bathingrecords/?hl=ja" 
+               target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <img src="img/ig_c.png" alt="Instagram"
+                   class="h-6 w-6 md:h-8 md:w-8 hover:opacity-80 transition-opacity duration-200">
+            </a>
+            <a href="https://bathingrecords.com/" 
+               target="_blank" rel="noopener noreferrer" aria-label="公式サイト">
+              <img src="img/weblink.svg" alt="公式サイト"
+                   class="h-6 w-6 md:h-8 md:w-8 hover:opacity-80 transition-opacity duration-200">
+            </a>
+          </div>
+        </div>
+
+        <p class="text-xs md:text-sm leading-loose md:leading-[1.8rem] mb-5">
+          オールジャンルのレコード・CDの販売、買取。<br>
+        </p>
       </div>
     </div>
   </div>
 </div>
-   <!-- Bathing Records のモーダル 終了 --> 
-
+<!-- Bathing Records のモーダル 終了 -->
 
 <script>
   // --- 復帰時などに最上部へ強制スクロールするヘルパー ---
