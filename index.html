@@ -37,7 +37,6 @@
     animation: fade-in 0.2s ease-out;
   }
 
-
 /* 初期状態：透明 */
 .heroGroup {
   opacity: 0;
@@ -559,6 +558,21 @@
         <p class="text-sm text-[#1195c8] font-normal">九重町</p>
       </h3>
     </div>
+
+    
+           <!-- こだわりふぁーむ仲道 
+    <div class="bg-white shadow rounded-lg pt-8 pr-7 pl-7 pb-6 text-center">
+      <div class="flex justify-center">
+        <img src="img/nakamichi.jpg" alt="こだわりふぁーむ仲道" loading="lazy"
+          class="w-40 aspect-square object-cover rounded-lg mb-4 cursor-pointer border-[12px]"
+          style="border-color: #dfd7c2" onclick="openModal('modal-nakamichi')">
+      </div>
+      <h3 class="text-base font-semibold leading-tight">
+        こだわりふぁーむ仲道 <br>
+        <p class="text-sm text-[#1195c8] font-normal">大分市</p>
+      </h3>
+    </div>
+--> 
 
 
 
@@ -2073,6 +2087,23 @@ HIPHOPを軸にしたFUNKY&GROOVYな選曲とスキルフルなDJプレイが持
     <h3 class="text-lg font-semibold leading-tight">とくら家のたべるもの</h3>
     <p class="text-sm text-[#1195c8] leading-tight mb-4 mt-1">中津市耶馬渓町</p>
   </div>
+  
+<!-- 右端：Instagram + WEBサイトアイコン -->
+<div class="flex items-center gap-3">
+  <!-- Instagramアイコン -->
+  <a href="https://www.instagram.com/eritokura/" 
+     target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+    <img src="img/ig_c.png" alt="Instagram"
+         class="h-6 w-6 md:h-8 md:w-8 hover:opacity-80 transition-opacity duration-200">
+  </a>
+
+  <!-- facebookリンクアイコン -->
+  <a href="https://www.facebook.com/taberutokura" 
+     target="_blank" rel="noopener noreferrer" aria-label="公式サイト">
+    <img src="img/fb.svg" alt="公式サイト"
+         class="h-6 w-6 md:h-8 md:w-8 hover:opacity-80 transition-opacity duration-200">
+  </a>
+</div>
 </div>
 <p class="text-xs md:text-sm leading-loose md:leading-[1.8rem] mb-5">
   <strong>お米栽培品種：</strong>ササニシキ　大分三井　ヒノヒカリ　<br>
@@ -2151,9 +2182,67 @@ HIPHOPを軸にしたFUNKY&GROOVYな選曲とスキルフルなDJプレイが持
     </div>
   </div>
 </div>
-   <!-- とくら家のたべるもの のモーダル 終了 -->
+   <!-- 佐藤ファーム　モーダル 終了 -->
 
 
+
+         <!-- モーダル13 こだわりふぁーむ仲道 -->
+<div id="modal-nakamichi"
+     class="fixed inset-0 z-50 bg-black/50 flex justify-center items-start px-4 pt-5 md:pt-32 pb-10 overflow-y-auto min-h-screen hidden">
+  
+<div class="bg-white rounded-lg md:p-10 p-0 pb-10 w-full max-w-md md:max-w-[1000px] text-center animate-fade-in relative h-auto overflow-hidden">
+
+    <!-- スマホ用ヘッダー（×ボタン用） -->
+    <div class="block md:hidden w-full h-12 bg-white relative">
+      <button onclick="closeModal('modal-nakamichi')"
+              class="absolute top-2 right-4 text-2xl text-gray-500 hover:text-black z-10">
+        &times;
+      </button>
+    </div>
+
+    <!-- PC用 ×ボタン -->
+    <button onclick="closeModal('modal-nakamichi')"
+            class="hidden md:block absolute top-4 right-4 text-2xl text-gray-500 hover:text-black z-10">
+      &times;
+    </button>
+
+    <!-- 中身：写真とテキスト -->
+    <div class="flex flex-col md:flex-row md:items-start gap-6">
+
+      <!-- 写真 -->
+      <img src="img/nakamichi2.jpg"
+     alt="こだわりふぁーむ仲道" 
+     loading="lazy"
+     class="w-full md:w-[380px] aspect-square object-cover rounded-t-lg md:rounded-lg md:mx-0 mx-auto mb-2 md:mb-0" />
+
+     <!-- テキスト -->
+    <div class="flex-1 text-left px-6 pt-0 md:pt-0 self-start">
+  <div class="flex justify-between items-start">
+  <!-- 左側：名前と肩書き -->
+  <div>
+    <h3 class="text-lg font-semibold leading-tight">こだわりふぁーむ仲道</h3>
+    <p class="text-sm text-[#1195c8] leading-tight mb-4 mt-1">大分市</p>
+  </div>
+</div>
+<p class="text-xs md:text-sm leading-loose md:leading-[1.8rem] mb-5">
+  <strong>お米栽培品種：</strong>Xxxxxxxxxxxxx<br>
+  <strong>お米作りのポリシー：</strong>
+Xxxxxxxxxxx<br>
+
+<strong>2025年の米づくりについて：</strong>
+Xxxxxxxxxxx
+</p>
+
+<p class="text-xs md:text-sm leading-loose md:leading-[1.8rem]">
+  <strong class="text-[#7d683f]">● 新嘗祭の試食の品種 </strong><br>
+  Xxxxxxxxxxx
+</p>
+      </div>
+    </div>
+  </div>
+</div>
+   <!-- こだわりふぁーむ仲道　モーダル 終了 -->
+    
 
 
 <!-- モーダル SHOPS -->
