@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OASIS: STREET HARVEST 2025 | OPEN AIR PARTY｜大分県大分市</title>
+<meta name="description" content="テクノを中心としたVinyl DJ・シンセパフォーマンス、Gravityfreeによるライブペインティング、おおいたOrganic Marketによる新嘗祭の開催など、「音と米」がテーマのOpen Air Party。">  
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-06VSWR0WJP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-06VSWR0WJP');
+</script>
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="/osh2025/favicon-osh-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="/osh2025/favicon-osh-16x16.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/osh2025/apple-touch-icon-osh180.png?v=4">
+  <link rel="icon" href="/osh2025/img/favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+     @keyframes fade-in {
+    from { opacity: 0; transform: scale(0.95); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+  .animate-fade-in {
+    animation: fade-in 0.2s ease-out;
+  }
+
+/* 初期状態：透明 */
+.heroGroup {
+  opacity: 0;
+  will-change: opacity;
+}
+
+/* フェードイン */
+@keyframes heroFade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* 初期状態：透明＆ちょっと上（ライン） */
+.lineAnim {
+  opacity: 0;
+  transform: translateY(-40px);
+  transition: transform .6s ease, opacity .6s ease;
+  will-change: transform, opacity;
+}
+
+/* アニメ開始時：フェードインして中央へ（← ここに } を追加） */
+.play-lines #centerLinesWrap .lineAnim {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 主役：フェードインだけ（位置は動かさない） */
+.show-hero .heroGroup {
+  animation: heroFade 1100ms ease forwards;
+}
+
+/* モーダル内SNSアイコンを一括で少し大きく */
+[id^="modal-"] a img[alt="Instagram"],
+[id^="modal-"] a img[alt="Mixcloud"],
+[id^="modal-"] a img[alt="Soundcloud"],
+[id^="modal-"] a img[alt="公式サイト"] {
+  width: 30px; height: 30px;
+}
+@media (min-width: 768px) {
+  [id^="modal-"] a img[alt="Instagram"],
+  [id^="modal-"] a img[alt="Mixcloud"],
+  [id^="modal-"] a img[alt="Soundcloud"],
+  [id^="modal-"] a img[alt="公式サイト"] {
+    width: 36px; height: 36px;
+  }
+  }
+  </style>
+  
+</head>
+<body class="text-sm leading-loose bg-white text-gray-800 font-sans font-normal"
+      style="font-family: 'Noto Sans JP', sans-serif;">
+
+  <!-- ヘッダー -->
+<header class="fixed top-0 left-0 w-full h-20 bg-white z-50 px-6
+               flex items-center justify-between relative overflow-visible pt-[env(safe-area-inset-top)]">
+  <!-- 左：PCナビ -->
+  <nav class="hidden xl:flex gap-6">
+
+  <a href="#about" class="text-[#1195c8] hover:underline">ABOUT</a>
+  <a href="#artists" class="text-[#1195c8] hover:underline">ARTISTS</a>
+  <a href="#shops" class="text-[#1195c8] hover:underline">SHOPS</a>
+  <a href="#rice" class="text-[#1195c8] hover:underline">おおいた Organic Market “新嘗祭”</a>
+  <a href="#access" class="text-[#1195c8] hover:underline">ACCESS</a>
+</nav>
+
+<!-- 右：ハンバーガー + Instagramアイコン -->
+<div class="flex items-center gap-4">
+<!-- スマホだけ表示 (xl以上では非表示) -->
+<button id="menu-toggle"
+  class="xl:hidden fixed left-4 top-6 z-[70] bg-white rounded-full w-12 h-12
+         flex flex-col items-center justify-center gap-[7px] shadow border border-white/80"
+  aria-label="Open menu" aria-expanded="false">
+  <span class="sr-only">Open menu</span>
+  <span class="block w-7 h-0.5 bg-[#24471d] rounded"></span>
+  <span class="block w-7 h-0.5 bg-[#24471d] rounded"></span>
+  <span class="block w-7 h-0.5 bg-[#24471d] rounded"></span>
+</button>
+
+  <!-- Instagramアイコン（全サイズで表示） -->
+  <a href="https://www.instagram.com/oasis_street_harvest/?hl=ja" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+     class="inline-block mt-[20px] md:mt-5 ml-14">
+    <img src="img/ig_c.png" alt="Instagram"
+         class="h-7 w-7 md:h-8 md:w-8 hover:opacity-80 transition-opacity duration-200">
+  </a>
+</div>
+
+<!-- ヘッダー中央ライン：外枠はセンター固定、内側だけ動かす -->
+<div id="centerLinesWrap"
+     class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-50">
+  <div class="lineAnim">
+    <!-- ※imgのままでもsvg直書きでもOK -->
+    <img src="img/line.svg" alt="3本ライン" class="block h-[120px] md:h-[160px] w-auto scale-y-125">
+  </div>
+</div>
+
+</header>
+
+
+<nav id="mobile-menu"
+  class="xl:hidden fixed inset-y-0 left-0 w-[360px] max-w-[90vw] bg-white px-6 py-6
+         transition-transform duration-300 ease-out -translate-x-full z-50 shadow-xl">
+  <button id="menu-close" class="text-3xl mb-2">×</button>
+  <div class="mt-10 space-y-5 leading-[32px] text-base pl-4">
+  <a href="#about"   class="block text-[#1195c8] ">ABOUT</a>
+  <a href="#artists" class="block text-[#1195c8] ">ARTISTS</a>
+  <a href="#shops"   class="block text-[#1195c8] ">SHOPS</a>
+  <a href="#rice"    class="block text-[#1195c8] ">おおいた Organic Market “新嘗祭”</a>
+  <a href="#access"  class="block text-[#1195c8] ">ACCESS</a>
+<!-- <a href="./timetable/" class="block text-[#1195c8] text-base">TIMETABLE</a> -->
+ </div>
+</nav>
+
+<!-- メニューの直後に追加 -->
+<div id="menu-overlay" class="fixed inset-0 bg-white/40 z-40 hidden"></div>
+
+<!-- メインビジュアル -->
+<section class="w-full min-h-[600px] bg-white flex flex-col items-center justify-center text-center px-8 pt-16 md:pt-24">
+
+  <!-- テキスト -->
+  <h1 id="heroText"
+    class="heroGroup text-sm font-normal text-gray-800 tracking-widest mt-3">
+  オアシス並木通り商店街 OPEN AIR PARTY
+</h1>
+
+  <div class="flex flex-col items-center gap-8">
+    <!-- ロゴ1 -->
+    <img id="heroLogo" src="img/logo1.svg" alt="OASIS STREET HARVEST 2025"
+         class="heroGroup w-[70vw] md:w-[min(80vw,560px)] h-auto mb-4 mt-7">
+
+    <!-- ロゴ2 -->
+    <img id="heroLogo2" src="img/logo2.svg" alt="音と米"
+         class="heroGroup h-32 md:h-40 mb-6 md:mb-12" />
+  </div>
+</section>
+
+  <!-- 開催概要 -->
+<section class="text-center py-10 text-black">
+
+  <!-- 青い帯 -->
+<div class="w-full bg-[#55add1] text-white py-6 flex flex-col justify-center items-center">
+  <h2 class="text-lg md:text-2xl font-bold mb-1">
+    2025年
+    <span class="text-3xl md:text-5xl">11</span>月
+    <span class="text-3xl md:text-5xl">23</span>日（日祝）
+    <span class="block md:inline">
+    9:00‒16:00</span>
+  </h2>
+  <p class="text-base md:text-xl font-bold mt-2">
+  <p class="text-base md:text-xl font-bold mt-2">
+  会場：
+  <a
+    href="https://oasis-namikidori.github.io/"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="underline underline-offset-2 decoration-1 hover:underline-offset-4 hover:decoration-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#1195c8]"
+  >
+    オアシス並木通り商店街前  </a>
+    <span class="block md:inline">
+    （大分市中央町4-1／歩行者天国）</span>
+
+</p>
+</div>
+
+
+
+</section>
+
+
+<section id="rice" class="scroll-mt-20 pt-0 pb-20 px-6 bg-white text-center">
+  <p class="text-sm md:text-base leading-loose max-w-4xl mx-auto mb-6 md:mb-8 text-left md:text-center">
+    OASIS: STREET HARVEST 2025 無事に終了いたしました。ご来場いただいた皆さま、ありがとうございました。</span>
+  </p>
+
+  <!-- グリッド：カードと写真 -->
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
+
+ 
+    <!-- 写真ボックス1 -->
+    <div class="bg-white shadow rounded-lg overflow-hidden min-h-[16rem] md:min-h-0 md:h-full">
+      <img src="img/repo_fukan.jpg" alt="" class="w-full h-full object-cover">
+    </div>
+
+       <!-- 写真ボックス5 -->
+    <div class="bg-white shadow rounded-lg overflow-hidden min-h-[16rem] md:min-h-0 md:h-full">
+      <img src="img/repo_dj.jpg" alt="" class="w-full h-full object-cover">
+    </div>
+
+    <!-- 写真ボックス2 -->
+    <div class="bg-white shadow rounded-lg overflow-hidden min-h-[16rem] md:min-h-0 md:h-full">
+      <img src="img/repo_zentai.jpg" alt="" class="w-full h-full object-cover">
+    </div>
+
+    <!-- 写真ボックス4 -->
+    <div class="bg-white shadow rounded-lg overflow-hidden min-h-[16rem] md:min-h-0 md:h-full">
+      <img src="img/repo_owate.jpg" alt="" class="w-full h-full object-cover">
+    </div>
+
+    
+    <!-- 写真ボックス3 -->
+    <div class="bg-white shadow rounded-lg overflow-hidden min-h-[16rem] md:min-h-0 md:h-full">
+      <img src="img/repo_interview.jpg" alt="" class="w-full h-full object-cover">
+    </div>
+
+
+         <!-- 写真ボックス6 -->
+    <div class="bg-white shadow rounded-lg overflow-hidden min-h-[16rem] md:min-h-0 md:h-full">
+      <img src="img/repo_art.jpg" alt="" class="w-full h-full object-cover">
+    </div>
+
+
+    <!-- 写真ボックス7 -->
+    <div class="bg-white shadow rounded-lg overflow-hidden min-h-[16rem] md:min-h-0 md:h-full">
+      <img src="img/repo_yohaku.jpg" alt="" class="w-full h-full object-cover">
+    </div>
+
+        <!-- 写真ボックス8 -->
+    <div class="bg-white shadow rounded-lg overflow-hidden min-h-[16rem] md:min-h-0 md:h-full">
+      <img src="img/repo_daichan.jpg" alt="" class="w-full h-full object-cover">
+    </div>
+
+ 
+
+            <!-- 写真ボックス9 -->
+    <div class="bg-white shadow rounded-lg overflow-hidden min-h-[16rem] md:min-h-0 md:h-full">
+      <img src="img/repo_yufu-kankyonoen.jpg" alt="" class="w-full h-full object-cover">
+    </div>
+
+                           <!-- 写真ボックス10 -->
+    <div class="bg-white shadow rounded-lg overflow-hidden min-h-[16rem] md:min-h-0 md:h-full">
+      <img src="img/repo_sake.jpg" alt="" class="w-full h-full object-cover">
+    </div>
+
+                    <!-- 写真ボックス10 -->
+    <div class="bg-white shadow rounded-lg overflow-hidden min-h-[16rem] md:min-h-0 md:h-full">
+      <img src="img/repo_workshop.jpg" alt="" class="w-full h-full object-cover">
+    </div>
+
+                <!-- 写真ボックス10 -->
+    <div class="bg-white shadow rounded-lg overflow-hidden min-h-[16rem] md:min-h-0 md:h-full">
+      <img src="img/repo_imori.jpg" alt="" class="w-full h-full object-cover">
+    </div>
+
+
+  </div>
+</section>
+
+
+  <!-- フッター -->
+<footer class="scroll-mt-20 py-6 bg-[#53addb] text-center text-sm text-white">
+  <div class="flex items-center justify-center gap-3">
+    <a href="https://oasis-namikidori.github.io/" target="_blank" rel="noopener noreferrer" class="leading-none">
+      &copy; 2025 オアシス並木通り商店街 All rights reserved.
+    </a>
+    <span class="leading-none select-none">｜</span>
+    <a href="https://www.instagram.com/oasis_street_harvest?igsh=dzVubjA3ZGtvYWVp&utm_source=qr"
+       target="_blank" rel="noopener noreferrer"
+       class="inline-flex items-center justify-center hover:opacity-80">
+      <img src="img/ig.png" alt="Instagram" class="h-8 w-8">
+    </a>
+  </div>
+</footer>
+
+<a href="#" id="backToTop"
+   class="fixed bottom-4 right-4 w-12 h-12 bg-[#2990d1] text-white text-xl
+          flex items-center justify-center text-center leading-none
+          rounded-full shadow hover:bg-[#2990d1] z-50 hidden
+          border border-white">
+  ↑
+</a>
+
+
+
+
+<script>
+  // --- 復帰時などに最上部へ強制スクロールするヘルパー ---
+  (function () {
+    function forceTop() {
+      const html = document.documentElement;
+      const prev = html.style.scrollBehavior;
+      // smooth だと微ズレが残るので一時的に auto
+      html.style.scrollBehavior = 'auto';
+
+      // 念押しで複数回 0 に
+      window.scrollTo(0, 0);
+      document.body.scrollTop = 0;
+      html.scrollTop = 0;
+
+      requestAnimationFrame(() => {
+        window.scrollTo(0, 0);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          html.style.scrollBehavior = prev; // 元に戻す
+        }, 60);
+      });
+    }
+
+    // 初回ロード（#ハッシュが無い時だけ）
+    window.addEventListener('load', () => {
+      if (!location.hash) forceTop();
+    });
+
+    // タブ復帰（bfcache含む）
+    window.addEventListener('pageshow', () => {
+      if (!location.hash && window.scrollY < 200) forceTop();
+    });
+
+    // 裏から表に戻った時
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible' && !location.hash && window.scrollY < 200) {
+        forceTop();
+      }
+    });
+  })();
+
+  // モーダル関数
+  function openModal(id) {
+    document.getElementById(id).classList.remove('hidden');
+  }
+  function closeModal(id) {
+    document.getElementById(id).classList.add('hidden');
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuLinks = mobileMenu.querySelectorAll('a');
+    const backToTop = document.getElementById('backToTop');
+
+    // ② ライン完了後にロゴをフェードイン
+    setTimeout(() => {
+      document.documentElement.classList.add('show-logo');
+    }, 800); // ライン700ms + 余裕100ms
+
+    // ラインを遅らせて再生（例：1秒後）
+    setTimeout(() => {
+      document.documentElement.classList.add('play-lines');
+    }, 400);
+
+    // 主役をさらに遅らせる（例：ライン後さらに0.8秒）
+    setTimeout(() => {
+      document.documentElement.classList.add('show-hero');
+    }, 1000);
+
+    // トップへ戻るボタンの表示切り替え
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTop.classList.remove('hidden');
+      } else {
+        backToTop.classList.add('hidden');
+      }
+    });
+
+    // トップへ戻る
+    backToTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+      setTimeout(() => {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+        window.scrollTo(0, 0);
+      }, 450);
+    });
+  });
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuClose  = document.getElementById('menu-close');
+  const overlay    = document.getElementById('menu-overlay');
+
+  // 念のため：旧クラスの遺骸を初期化で除去
+  mobileMenu?.classList.remove('hidden','opacity-0','pointer-events-none','scale-95','transform');
+
+  function openMenu() {
+    mobileMenu.classList.remove('-translate-x-full');
+    overlay?.classList.remove('hidden');
+    menuToggle?.setAttribute('aria-expanded','true');
+    document.documentElement.style.overflow = 'hidden';
+  }
+  function closeMenu() {
+    mobileMenu.classList.add('-translate-x-full');
+    overlay?.classList.add('hidden');
+    menuToggle?.setAttribute('aria-expanded','false');
+    document.documentElement.style.overflow = '';
+  }
+
+  // トグル（1回で開閉）
+  menuToggle?.addEventListener('click', () => {
+    if (mobileMenu.classList.contains('-translate-x-full')) openMenu();
+    else closeMenu();
+  });
+
+  menuClose?.addEventListener('click', closeMenu);
+  overlay?.addEventListener('click', closeMenu);
+
+  // メニュー内リンク
+  const menuLinks = mobileMenu?.querySelectorAll('a') ?? [];
+  menuLinks.forEach(a => {
+    a.addEventListener('click', (e) => {
+      const href = a.getAttribute('href') || '';
+      // まず閉じる（黒幕解除）
+      closeMenu();
+
+      // ページ内リンクならデフォルト抑止してスムーススクロール
+      if (href.startsWith('#')) {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          const headerOffset = 80;
+          const y = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      }
+      // 別ページはそのまま遷移（黒幕は closeMenu 済みなので残らない）
+    });
+  });
+
+  // ページ遷移・戻る（bfcache）対策：戻ってきても常に閉じた状態に
+  window.addEventListener('pageshow', () => {
+    closeMenu();
+  });
+  window.addEventListener('beforeunload', () => {
+    closeMenu();
+  });
+});
+</script>
+
+</body>
+</html>
